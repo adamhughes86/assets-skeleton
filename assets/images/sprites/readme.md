@@ -1,0 +1,1 @@
+Grunt Spritesmith will convert any files in this folder into a Sprite

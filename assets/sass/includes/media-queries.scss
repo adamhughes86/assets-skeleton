@@ -1,0 +1,19 @@
+// Media Queries - should be device agnostic for future proofing
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (max-width: 1280px) { @content; }
+  }
+  @else if $point == recently-viewed-lrg {
+    @media (max-width: 1024px) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: 800px) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: 530px) { @content; }
+  }
+  @else if $point == vsmall {
+    @media (max-width: 420px) { @content; }
+  }
+}
