@@ -55,7 +55,7 @@ module.exports = function(grunt) {
             all: {
                 src: '../images/sprites/*.png',
                 dest: '../images/sprite.png',
-                destCss: '../sass/includes/sprite.scss',
+                destCss: '../sass/includes/_sprite.scss',
                 imgPath: '../../assets/images/sprite.png',
                 padding: 5
             }
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
         },
         kss: {
             options: {
-                css: '../assets/css/styles.css',
+                css: '../css/styles.css',
             },
             dist: {
                 files: {

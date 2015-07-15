@@ -15,10 +15,6 @@ body {
     font-weight:300;
     line-height: 1.8em;
     -webkit-font-smoothing: antialiased;
-  
-    @include breakpoint(small){
-        @include font-size(14);
-    }
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: $primary-font;
@@ -240,30 +236,4 @@ blockquote {
       display: block;
     }
   }
-}
-.sr-only {
-    display:none;
-}
-.styleguide {
-  max-width:1064px;
-  padding:0 20px;
-  margin:0 auto;
-}
-.sg-title {
-    padding: 20px 5px;
-    font-family: monospace;
-    font-size: 20px;
-    font-weight: 200;
-    border-bottom: 1px solid;
-    background-color: #ebebeb;
-}
-.sg-colour {
-    display:inline-block;
-    height:40px;
-    width:40px;
-    margin:20px 20px 20px 0;
-    border:1px solid #CCC;
-}
-.sg-colour-1 {
-    background-color: #ebebeb;
 }

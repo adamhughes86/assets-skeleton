@@ -9,6 +9,7 @@
 // A button suitable for giving stars to someone.
 //
 // :hover             - Subtle hover highlight.
+// .primary           - primary buttons
 //
 // Markup:
 //    <a href="#" class="button {{modifier_class}}">Link Button</a>
@@ -31,4 +32,8 @@
 /* Main */
 .container {
     position:relative;
+}
+.primary {
+    color:red;
+    font-size:20px;
 }

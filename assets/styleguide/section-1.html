@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 <body id="kss-node">
@@ -33,19 +33,43 @@
       <li class="kss-nav__menu-item">
         <a href="section-1.html">
           <span class="kss-nav__ref">1</span
-          ><span class="kss-nav__name">Buttons</span>
+          ><span class="kss-nav__name">Typography</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1-1">
                 <span class="kss-nav__ref">1.1</span
-                ><span class="kss-nav__name">Basic button styles</span>
+                ><span class="kss-nav__name">Headings</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1-2">
                 <span class="kss-nav__ref">1.2</span
-                ><span class="kss-nav__name">Sizes</span>
+                ><span class="kss-nav__name">Paragraphs</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1-3">
+                <span class="kss-nav__ref">1.3</span
+                ><span class="kss-nav__name">Blockquote</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1-4">
+                <span class="kss-nav__ref">1.4</span
+                ><span class="kss-nav__name">Definition List</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1-5">
+                <span class="kss-nav__ref">1.5</span
+                ><span class="kss-nav__name">Ordered List</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1-6">
+                <span class="kss-nav__ref">1.6</span
+                ><span class="kss-nav__name">Unordered List</span>
               </a>
             </li>
         </ul>
@@ -66,13 +90,13 @@
                 #permalink
             </span>
           </span>
-          Buttons
+          Typography
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>Buttons can be anything with the class .button</p>
+        <p>We set a base level of styling across all core html elements. This is to remain simplistic and anything requiring more advanced styling will require classes.</p>
 
       </div>
     </div>
@@ -90,43 +114,39 @@
                 #permalink
             </span>
           </span>
-          Basic button styles
+          Headings
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>A button suitable for giving stars to someone.</p>
+        <p>Core headings based on a Perfect Fourth (1.333) ratio.
+<a href="http://www.modularscale.com/?16&amp;px&amp;1.333&amp;web&amp;text">http://www.modularscale.com/?16&amp;px&amp;1.333&amp;web&amp;text</a></p>
 
       </div>
     </div>
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Examples
-        </div>
-        <div class="kss-modifier__default-name kss-style">
-          Default styling
+          Example
         </div>
         <div class="kss-modifier__example">
-             <a href="#" class="button [modifier class]">Link Button</a>
-   <button class="button [modifier class]">Button Two</button>
-        </div>
-        <div class="kss-modifier__name kss-style">
-          :hover
-        </div>
-        <div class="kss-modifier__description kss-style">
-          Subtle hover highlight.
-        </div>
-        <div class="kss-modifier__example">
-             <a href="#" class="button pseudo-class-hover">Link Button</a>
-   <button class="button pseudo-class-hover">Button Two</button>
+              <h1>h1. Heading</h1>
+    <h2>h2. Heading</h2>
+    <h3>h3. Heading</h3>
+    <h4>h4. Heading</h4>
+    <h5>h5. Heading</h5>
+    <h6>h6. Heading</h6>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">   &lt;a href=&quot;#&quot; class=&quot;button [modifier class]&quot;&gt;Link Button&lt;/a&gt;
-   &lt;button class=&quot;button [modifier class]&quot;&gt;Button Two&lt;/button&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;h1&gt;h1. Heading&lt;/h1&gt;
+    &lt;h2&gt;h2. Heading&lt;/h2&gt;
+    &lt;h3&gt;h3. Heading&lt;/h3&gt;
+    &lt;h4&gt;h4. Heading&lt;/h4&gt;
+    &lt;h5&gt;h5. Heading&lt;/h5&gt;
+    &lt;h6&gt;h6. Heading&lt;/h6&gt;</code></pre>
       </div>
 
       </section>
@@ -141,43 +161,208 @@
                 #permalink
             </span>
           </span>
-          Sizes
+          Paragraphs
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>A button suitable for giving stars to someone.</p>
+        <p>Standard text to be used as a base for styling with classes</p>
 
       </div>
     </div>
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Examples
-        </div>
-        <div class="kss-modifier__default-name kss-style">
-          Default styling
+          Example
         </div>
         <div class="kss-modifier__example">
-             <a href="#" class="button [modifier class]">Link Button</a>
-   <button class="button [modifier class]">Button Two</button>
-        </div>
-        <div class="kss-modifier__name kss-style">
-          :hover
-        </div>
-        <div class="kss-modifier__description kss-style">
-          Subtle hover highlight.
-        </div>
-        <div class="kss-modifier__example">
-             <a href="#" class="button pseudo-class-hover">Link Button</a>
-   <button class="button pseudo-class-hover">Button Two</button>
+              <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. <strong>Praesent mattis</strong>, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+    <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">   &lt;a href=&quot;#&quot; class=&quot;button [modifier class]&quot;&gt;Link Button&lt;/a&gt;
-   &lt;button class=&quot;button [modifier class]&quot;&gt;Button Two&lt;/button&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot; title=&quot;test link&quot;&gt;test link&lt;/a&gt; adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. &lt;strong&gt;Praesent mattis&lt;/strong&gt;, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, &lt;em&gt;emphasis&lt;/em&gt; consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-3" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1-3">
+          <span class="kss-title__ref">
+              1.3
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Blockquote
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Blockquote to be used on it&#39;s own or within a paragraph</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+              <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+    </blockquote>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;blockquote cite=&quot;http://www.worldwildlife.org/who/index.html&quot;&gt;
+        For 50 years, WWF has been protecting the future of nature. The world&#x27;s leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+    &lt;/blockquote&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-4" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1-4">
+          <span class="kss-title__ref">
+              1.4
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Definition List
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Definition lists are used in ........</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+              <dl>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+        <dd>This is a definition list division.</dd>
+        <dd>This is a definition list division.</dd>
+    </dl>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;dl&gt;
+        &lt;dt&gt;Definition List Title&lt;/dt&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;dt&gt;Definition List Title&lt;/dt&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+    &lt;/dl&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-5" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1-5">
+          <span class="kss-title__ref">
+              1.5
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Ordered List
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Ordered lists are used in ........</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+              <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ol>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;ol&gt;
+        &lt;li&gt;List Item 1&lt;/li&gt;
+        &lt;li&gt;List Item 2&lt;/li&gt;
+        &lt;li&gt;List Item 3&lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-6" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1-6">
+          <span class="kss-title__ref">
+              1.6
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Unordered List
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Unordered lists are used in ........</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+              <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;ul&gt;
+        &lt;li&gt;List Item 1&lt;/li&gt;
+        &lt;li&gt;List Item 2&lt;/li&gt;
+        &lt;li&gt;List Item 3&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
       </div>
 
       </section>

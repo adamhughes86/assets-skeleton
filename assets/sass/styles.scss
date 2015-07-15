@@ -1,24 +1,31 @@
-// Variables
-@import 'includes/fonts.scss';
-@import 'includes/variables.scss';
-@import 'includes/sprite.scss';
-@import 'includes/iconfont.scss';
-//Plugins
+// Core - required for setting the project. Sometimes pulled in with Bower
+@import 'core/bourbon/bourbon';
+@import 'core/normalize.scss';
 
-@import 'plugins/slick.scss';
+// Vendor - settings and styles from Vendor plugins and components. These should be left as default
+//@import 'vendor/slick.scss';
 
-// Mixins
-@import 'bourbon/bourbon';
-@import 'includes/mixins.scss';
-@import 'includes/media-queries.scss';
+// Settings - tend to do nothing on their own. Used in combination with other files
+@import 'settings/fonts';
+@import 'settings/variables';
+@import 'settings/sprite';
+@import 'settings/mixins';
+@import 'settings/media-queries';
 
-// Normlize and Base
-@import 'styles/normalize.scss';
-@import 'styles/base.scss';
+// ui - Basic styles to be reused on every page
+@import 'ui/structure';
+@import 'ui/typography';
+@import 'ui/icons';
+@import 'ui/buttons';
+@import 'ui/forms';
+@import 'ui/tables';
 
-// Main Styles
-@import 'styles/main.scss';
-@import 'modules/header.scss';
-@import 'modules/nav.scss';
-@import 'modules/footer.scss';
-@import 'modules/slick.scss';
+// Components - reusable components and sections
+@import 'components/header';
+@import 'components/nav';
+@import 'components/footer';
+@import 'components/pagination';
+@import 'components/slick';
+
+// Styles that need to load last
+@import 'ui/print';
