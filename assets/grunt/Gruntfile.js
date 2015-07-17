@@ -77,6 +77,14 @@ module.exports = function(grunt) {
                 smarttabs : true
             }
         },
+        validation: {
+            options: {
+                reset: grunt.option('reset') || false,
+                stoponerror: false,
+                remotePath: 'http://arsenalplayerv2.vagrant.rippleffect.com/',
+                remoteFiles: ['features/']
+            }
+        },
         kss: {
             options: {
                 css: '../css/styles.css',
@@ -140,6 +148,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-kss');
+    grunt.loadNpmTasks('grunt-html-validation');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
@@ -147,5 +156,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['bower:install', 'concat', 'uglify', 'sprite', 'sass', 'kss', 'jshint', 'notify_hooks']);
     grunt.registerTask('dev', ['concat', 'sprite', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
     grunt.registerTask('components', ['bower:install', 'concat']);
-
+    grunt.registerTask('validate', ['validation']);
 };
