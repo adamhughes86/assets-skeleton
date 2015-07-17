@@ -2,7 +2,7 @@
 //
 // We set a base level of styling across all core html elements. This is to remain simplistic and anything requiring more advanced styling will require classes.
 //
-// Styleguide 1
+// Styleguide 2
 
 
 // Headings
@@ -10,15 +10,17 @@
 // Core headings based on a Perfect Fourth (1.333) ratio.
 // http://www.modularscale.com/?16&px&1.333&web&text
 //
-// Markup:
-//     <h1>h1. Heading</h1>
-//     <h2>h2. Heading</h2>
-//     <h3>h3. Heading</h3>
-//     <h4>h4. Heading</h4>
-//     <h5>h5. Heading</h5>
-//     <h6>h6. Heading</h6>
+// .styled - basic styled headings
 //
-// Styleguide 1.1
+// Markup:
+// <h1 class=" {{modifier_class}}">h1. Heading</h1>
+// <h2 class=" {{modifier_class}}">h2. Heading</h2>
+// <h3 class=" {{modifier_class}}">h3. Heading</h3>
+// <h4 class=" {{modifier_class}}">h4. Heading</h4>
+// <h5 class=" {{modifier_class}}">h5. Heading</h5>
+// <h6 class=" {{modifier_class}}">h6. Heading</h6>
+//
+// Styleguide 2.1
 
 h1, h2, h3, h4, h5, h6 {
     margin:0 0 1em;
@@ -26,6 +28,12 @@ h1, h2, h3, h4, h5, h6 {
     clear:both;
     line-height: 1em;
     font-family: $primary-font;
+    
+    &.styled {
+        font-family: monospace;
+        color:green;
+        text-decoration: underline;
+    }
 }
 h1 {
     @include font-size(50.517);
@@ -49,13 +57,13 @@ h6 {
 
 // Paragraphs
 //
-// Standard text to be used as a base for styling with classes
+// Standard text to be used as a base for styling with classes. The base font size is 16px but all fonts are then converted to rem's.
 //
 // Markup:
 //     <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. <strong>Praesent mattis</strong>, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
 //     <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
 //
-// Styleguide 1.2
+// Styleguide 2.2
 
 
 p {
@@ -78,7 +86,7 @@ a {
 //         For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
 //     </blockquote>
 //
-// Styleguide 1.3
+// Styleguide 2.3
 
 blockquote {
     margin:10px 10px 10px 40px;
@@ -101,7 +109,7 @@ blockquote {
 //         <dd>This is a definition list division.</dd>
 //     </dl>
 //
-// Styleguide 1.4
+// Styleguide 2.4
 
 dl {
     margin-bottom:1em;
@@ -126,7 +134,7 @@ dd {
 //         <li>List Item 3</li>
 //     </ol>
 //
-// Styleguide 1.5
+// Styleguide 2.5
 
 ol {
     
@@ -147,8 +155,24 @@ li {
 //         <li>List Item 3</li>
 //     </ul>
 //
-// Styleguide 1.6
+// Styleguide 2.6
 
 ul {
     
 }
+
+
+// Example Typography Page
+//
+// This is an example of a lot of typographic elements working together
+//
+// Markup:
+// <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+// <ul>
+//     <li>List Item 1</li>
+//     <li>List Item 2</li>
+//     <li>List Item 3</li>
+// </ul>
+// <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+//
+// Styleguide 3
