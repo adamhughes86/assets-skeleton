@@ -1,0 +1,59 @@
+// Icons
+//
+// Grunticon stuff
+//
+// Styleguide 5
+
+[class^="icon-"] {
+    background-size:contain;
+    
+    svg {
+        height:100%;
+        width:100%;
+    }
+}
+
+
+// Twitter
+//
+// Core icons
+//
+// Markup:
+// <div class="icon-twitter" data-grunticon-embed></div>
+//
+// Styleguide 5.1
+
+.icon-twitter {
+    width:40px;
+    height:40px;
+    transition: all 1s;
+
+    path {
+        transition: all 0.4s;
+    }
+    &:hover path {
+        fill:#55acee;
+    }
+}
+
+
+// Magnifier
+//
+// Can be used for search
+//
+// Markup:
+// <div class="icon-magnifier" data-grunticon-embed></div>
+//
+// Styleguide 5.2
+
+
+.icon-magnifier {
+    width:40px;
+    height:40px;
+    transition: all 1s;
+
+    &:hover {
+        width:80px;
+        height:80px;
+    }
+}

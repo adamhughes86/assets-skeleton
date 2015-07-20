@@ -60,6 +60,19 @@ module.exports = function(grunt) {
                 padding: 5
             }
         },
+        grunticon: {
+            svgIcons: {
+                files: [{
+                    expand: true,
+                    cwd: '../images/svg/input',
+                    src: ['*.svg', '*.png'],
+                    dest: '../images/svg/output'
+                }],
+                options: {
+                    enhanceSVG: true
+                }
+            }
+        },
         sass: {
             dist: {
                 files: [{
@@ -152,6 +165,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-grunticon');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-kss');
     grunt.loadNpmTasks('grunt-html-validation');
@@ -159,8 +173,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['bower:install', 'concat', 'uglify', 'sprite', 'sass', 'kss', 'jshint', 'notify_hooks']);
-    grunt.registerTask('dev', ['concat', 'sprite', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
+    grunt.registerTask('default', ['bower:install', 'concat', 'uglify', 'grunticon:svgIcons', 'sass', 'kss', 'jshint', 'notify_hooks']);
+    grunt.registerTask('dev', ['concat', 'sprite', 'grunticon:svgIcons', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
     grunt.registerTask('components', ['bower:install', 'concat']);
     grunt.registerTask('validate', ['validation']);
 };
