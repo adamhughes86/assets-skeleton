@@ -95,11 +95,13 @@ module.exports = function(grunt) {
                 reset: grunt.option('reset') || false,
                 stoponerror: false,
                 doctype: 'HTML5',
-                // Set your local site and urls you want to check here
-                remotePath: 'http://lfc.local/',
-                remoteFiles: [' ', 'kit/'],
-                // You need to have a local version of the w3c validator installed on your computer / network
-                serverUrl: 'http://localhost/w3c-validator/check'
+                remotePath: 'http://player.arsenal.com/', // Set your testing site (remote or local)
+                remoteFiles: [
+                    ' ',
+                    'features/',
+                    'features/video/6391/the-breakdown-fa-cup-final'
+                ], // Set the urls you want to test here
+                serverUrl: 'http://localhost/w3c-validator/check' // You need to have a local version of the w3c validator installed on your computer / network
             },
             files: {
             }
