@@ -52,18 +52,15 @@
 <body>
 
 <header class="header">
-    
+
 </header>
 
 Hello World!
-    
-    <div class="icon-twitter" data-grunticon-embed></div>
-    <div class="icon-magnifier" data-grunticon-embed></div>
 
 <footer class="footer">
 
 </footer>
-    
+
 <script type="text/javascript" src="/assets/js/main.min.js"></script>
 </body>
 </html>

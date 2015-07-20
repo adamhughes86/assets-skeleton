@@ -1,19 +1,25 @@
-// Media Queries - should be device agnostic for future proofing
+// Media Queries should be device agnostic for future proofing
 
-@mixin breakpoint($point) {
-  @if $point == large {
-    @media (max-width: 1280px) { @content; }
-  }
-  @else if $point == recently-viewed-lrg {
-    @media (max-width: 1024px) { @content; }
-  }
-  @else if $point == medium {
-    @media (max-width: 800px) { @content; }
-  }
-  @else if $point == small {
-    @media (max-width: 530px) { @content; }
-  }
-  @else if $point == vsmall {
-    @media (max-width: 420px) { @content; }
-  }
+$breakpoints: (
+    vsmall : 320px,
+    small : 500px,
+    medium : 800px,
+    large : 1280px
+);
+
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
 }
+
+// Call media queries with
+// @include breakpoint(medium) {}
+// This can be called inline if only one or two lines need changing or as part of a larger block. Media queries should be inside the component sass file that it affects

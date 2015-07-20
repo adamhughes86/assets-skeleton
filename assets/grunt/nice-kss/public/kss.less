@@ -166,37 +166,33 @@
     padding: 20px;
     background: #fff;
 
-    @media screen and (min-width: 769px) {
-        padding: 0;
-
-        .kss-main,
-        .kss-sidebar {
-            float: left;
-            margin-right: -100%;
-            box-sizing: border-box;
-        }
-    }
-
     .kss-main {
         width: 100%;
+        max-width:1540px;
         margin: 0 auto;
+        padding:10px 20px 10px 260px;
 
-        @media screen and (min-width: 769px) {
-            width: 80%;
-            margin-left: 20%;
-            padding: 10px 20px;
+        @media screen and (max-width: 900px) {
+            padding:20px 0;
         }
     }
 
     .kss-sidebar {
-        @media screen and (min-width: 769px) {
-            position:fixed;
-            top:20px;
-            left:20px;
-            width: 220px;
-            padding: 10px 20px;
-            background-color:#F0EDDE;
-            border-left:2px solid #444;
+        position:fixed;
+        top:30px;
+        left:20px;
+        width: 220px;
+        padding: 10px 20px;
+        background-color:#F0EDDE;
+        border-left:2px solid #444;
+
+        @media screen and (max-width: 900px) {
+            position: relative;
+            top:0;
+            left:0;
+            width:100%;
+            border-left:0;
+            border-bottom:2px solid #444;
         }
     }
 }
@@ -207,27 +203,17 @@
 
 #kss-node {
 
-  .kss-doc-title {
-    margin: 0;
-
-    @media screen and (min-width: 769px) {
-      font-size: 1.5em;
+    .kss-doc-title {
+        margin: 0;
+        font-size: 1.5em;
     }
-  }
 
-  .kss-header,
-  .kss-nav {
-    @media screen and (min-width: 769px) {
-      margin:10px 0;
+    .kss-nav__menu {
+        margin-top: (@kss-vertical-rhythm/2);
+        margin-bottom: (@kss-vertical-rhythm/2);
+        padding: 0;
+        list-style-type: none;
     }
-  }
-
-  .kss-nav__menu {
-    margin-top: (@kss-vertical-rhythm/2);
-    margin-bottom: (@kss-vertical-rhythm/2);
-    padding: 0;
-    list-style-type: none;
-  }
 
     .kss-nav__item {
         display:block;
@@ -251,7 +237,6 @@
 #kss-node {
 
   .kss-section {
-    max-width: 48em;
     margin-bottom: (@kss-vertical-rhythm * 2);
   }
 
@@ -339,7 +324,7 @@
         margin-bottom: (@kss-vertical-rhythm / 2);
     }
     .kss-modifier__example {
-        padding: 30px 0;
+        padding: 50px 0 30px 0;
         margin: 0 0 (@kss-vertical-rhythm - 1px) 0;
         border-top:1px solid #999;
         position:relative;

@@ -156,7 +156,7 @@ ul {
 
 // Address
 //
-// Address block
+// The <code>address</code> tag is not used for general postal address unless that address directly relates to the document. The <code>address</code> tag should be used for providing contact info for document maintainers. This can include a feedback address (email or postal), phone numbers or links to external web pages. As a side note - if you need to format an address that doesn't fall into this criteria use HTML5 microdata.
 //
 // Markup:
 // <address>
@@ -169,19 +169,3 @@ ul {
 
 address {
 }
-
-
-// Example Typography Page
-//
-// This is an example of a lot of typographic elements working together
-//
-// Markup:
-// <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
-// <ul>
-//     <li>List Item 1</li>
-//     <li>List Item 2</li>
-//     <li>List Item 3</li>
-// </ul>
-// <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
-//
-// Styleguide 3

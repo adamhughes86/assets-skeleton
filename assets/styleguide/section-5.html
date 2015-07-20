@@ -38,22 +38,34 @@
         <a class="kss-nav__item" href="section-2.html">2 - Typography</a>
 
 
-        <a class="kss-nav__item" href="section-3.html">3 - Example Typography Page</a>
+        <a class="kss-nav__item" href="section-3.html">3 - Icons</a>
 
 
         <a class="kss-nav__item" href="section-4.html">4 - Buttons</a>
 
 
-        <a class="kss-nav__item" href="section-5.html">5 - Icons</a>
+        <a class="kss-nav__item" href="section-5.html">5 - Forms</a>
 
 
 
-            <a class="kss-nav__item kss-nav__item--secondary" href="section-5.html#kssref-5-1">5.1 - Twitter</a>
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-5.html#kssref-5-1">5.1 - Input Field</a>
 
 
-            <a class="kss-nav__item kss-nav__item--secondary" href="section-5.html#kssref-5-2">5.2 - Magnifier</a>
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-5.html#kssref-5-2">5.2 - Textarea Field</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-5.html#kssref-5-3">5.3 - Input Select</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-5.html#kssref-5-4">5.4 - Input Checkbox</a>
 
         
+
+        <a class="kss-nav__item" href="section-6.html">6 - Tables</a>
+
+
+        <a class="kss-nav__item" href="section-7.html">7 - Example Content Page</a>
+
     </nav>
 </div>
     
@@ -65,14 +77,14 @@
     <div class="kss-top-info kss-style">
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink" href="#kssref-5">
-          5 - Icons
+          5 - Forms
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>Grunticon stuff</p>
+        <p>Styling forms should be done with care and consideration and maintain usability. It is recommended to use classes to override core styles and not style the elements themselves.</p>
 
       </div>
     </div>
@@ -84,33 +96,54 @@
     <div class="kss-top-info kss-style">
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-5-1">
-          5.1 - Twitter
+          5.1 - Input Field
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>Core icons</p>
+        <p>Input box and Label styling</p>
 
       </div>
     </div>
 
     <div class="kss-modifier__wrapper">
 
+        <ul class="kss-modifier__info kss-style">
+            <li class="kss-modifier__info-name kss-style">Default styling</li>
+
+                <li class="kss-modifier__info-name kss-style">.form-field--alt - <span class="kss-modifier__info-desc kss-style">Alternate style to make input stand out more</span></li>
+        </ul>
 
         <div class="kss-modifier__example">
-            <div class="icon-twitter" data-grunticon-embed></div>
+            <div class="form-field [modifier class]">
+    <label class="form-label" for="login-example">Password:</label>
+    <input id="login-example" type="text" name="login[example]" class="form-input" />
+</div>
             
             <div class="kss-modifier__smallname kss-style">
                 Default
             </div>
         </div>
           
+        <div class="kss-modifier__example">
+            <div class="form-field form-field--alt">
+    <label class="form-label" for="login-example">Password:</label>
+    <input id="login-example" type="text" name="login[example]" class="form-input" />
+</div>
+            
+            <div class="kss-modifier__smallname kss-style">
+                .form-field--alt
+            </div>
+        </div>
     </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;icon-twitter&quot; data-grunticon-embed&gt;&lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;form-field [modifier class]&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;login-example&quot;&gt;Password:&lt;/label&gt;
+    &lt;input id=&quot;login-example&quot; type=&quot;text&quot; name=&quot;login[example]&quot; class=&quot;form-input&quot; /&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -119,14 +152,70 @@
     <div class="kss-top-info kss-style">
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-5-2">
-          5.2 - Magnifier
+          5.2 - Textarea Field
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>Can be used for search</p>
+        <p>Textarea box and Label styling</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+        <ul class="kss-modifier__info kss-style">
+            <li class="kss-modifier__info-name kss-style">Default styling</li>
+
+                <li class="kss-modifier__info-name kss-style">.form-field--alt - <span class="kss-modifier__info-desc kss-style">Alternate style to make input stand out more</span></li>
+        </ul>
+
+        <div class="kss-modifier__example">
+            <div class="form-field [modifier class]">
+    <label class="form-label" for="textarea-example">Textarea</label>
+    <textarea type="text" name="textarea" class="form-textarea" rows="2" cols="80" maxlength="200"></textarea>
+</div>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+        <div class="kss-modifier__example">
+            <div class="form-field form-field--alt">
+    <label class="form-label" for="textarea-example">Textarea</label>
+    <textarea type="text" name="textarea" class="form-textarea" rows="2" cols="80" maxlength="200"></textarea>
+</div>
+            
+            <div class="kss-modifier__smallname kss-style">
+                .form-field--alt
+            </div>
+        </div>
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;form-field [modifier class]&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;textarea-example&quot;&gt;Textarea&lt;/label&gt;
+    &lt;textarea type=&quot;text&quot; name=&quot;textarea&quot; class=&quot;form-textarea&quot; rows=&quot;2&quot; cols=&quot;80&quot; maxlength=&quot;200&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-5-3" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-5-3">
+          5.3 - Input Select
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Select box</p>
 
       </div>
     </div>
@@ -135,7 +224,13 @@
 
 
         <div class="kss-modifier__example">
-            <div class="icon-magnifier" data-grunticon-embed></div>
+            <div class="form-field--select [modifier class]">
+    <label class="form-label" for="select-example">Select</label>
+    <select id="select-example" type="text" name="select[example]" class="form-select">
+        <option value="1" selected="selected">Option 1</option>
+        <option value="2">Option 2</option>
+    </select>
+</div>
             
             <div class="kss-modifier__smallname kss-style">
                 Default
@@ -145,7 +240,54 @@
     </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;icon-magnifier&quot; data-grunticon-embed&gt;&lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;form-field--select [modifier class]&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;select-example&quot;&gt;Select&lt;/label&gt;
+    &lt;select id=&quot;select-example&quot; type=&quot;text&quot; name=&quot;select[example]&quot; class=&quot;form-select&quot;&gt;
+        &lt;option value=&quot;1&quot; selected=&quot;selected&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-5-4" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-5-4">
+          5.4 - Input Checkbox
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Alternate Checkbox styling e.g. mailing list sign up</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+            <div class="form-checkbox--alt">
+    <input type="checkbox" id="checkbox-example" class="form-checkbox__input--alt"/>
+    <label for="checkbox-example" class="form-checkbox__label--alt">I Agree</label>
+</div>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;form-checkbox--alt&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox-example&quot; class=&quot;form-checkbox__input--alt&quot;/&gt;
+    &lt;label for=&quot;checkbox-example&quot; class=&quot;form-checkbox__label--alt&quot;&gt;I Agree&lt;/label&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>

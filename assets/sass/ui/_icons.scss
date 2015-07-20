@@ -1,8 +1,8 @@
 // Icons
 //
-// Grunticon stuff
+// We use grunticon to process SVG files. Grunticon provides a fallback for older browsers and browsers with javascript disabled. To make it work correctly javascript must be added to the head of the document. This swaps out linked SVG's and replaces them with embedded ones. These can then be styled and animated.
 //
-// Styleguide 5
+// Styleguide 3
 
 [class^="icon-"] {
     background-size:contain;
@@ -16,12 +16,14 @@
 
 // Twitter
 //
-// Core icons
+// A series of social icons that we can use
+//
+// :hover - The hovered state
 //
 // Markup:
-// <div class="icon-twitter" data-grunticon-embed></div>
+// <div class="icon-twitter {{modifier_class}}" data-grunticon-embed></div>
 //
-// Styleguide 5.1
+// Styleguide 3.1
 
 .icon-twitter {
     width:40px;
@@ -37,6 +39,31 @@
 }
 
 
+// Facebook
+//
+// A series of social icons that we can use
+//
+// :hover - The hovered state
+//
+// Markup:
+// <div class="icon-facebook {{modifier_class}}" data-grunticon-embed></div>
+//
+// Styleguide 3.2
+
+.icon-facebook {
+    width:40px;
+    height:40px;
+    transition: all 1s;
+
+    path {
+        transition: all 0.4s;
+    }
+    &:hover path {
+        fill:#3B5998;
+    }
+}
+
+
 // Magnifier
 //
 // Can be used for search
@@ -44,7 +71,7 @@
 // Markup:
 // <div class="icon-magnifier" data-grunticon-embed></div>
 //
-// Styleguide 5.2
+// Styleguide 3.3
 
 
 .icon-magnifier {

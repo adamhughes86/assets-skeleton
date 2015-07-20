@@ -4,8 +4,6 @@
 //
 // .fill-zeus       - Hex: 2a241d - this is a highlight
 // .fill-supernova  - f1ca00
-// .fill-branded - f00
-// .fill-armadillo - 3c352e
 //
 // Markup:
 // <span class="kss-color {{modifier_class}}"></span>
@@ -16,9 +14,7 @@ $colorPalette: (
     customBlack  #000,
     customWhite  #fff,
     zeus  #2a241d,
-    supernova  #f1ca00,
-    brandRed #f00f00,
-    armadillo #3c352e
+    supernova  #f1ca00
 );
 
 @each $color in $colorPalette {
