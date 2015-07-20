@@ -107,7 +107,7 @@ module.exports = function(grunt) {
         kss: {
             options: {
                 css: '../css/styles.css',
-                template: '/Users/ahughes/Sites/php-skeleton/assets/grunt/nice-kss', // This should be the path to a better KSS template
+                template: 'nice-kss', // This should be the path to a better KSS template
             },
             dist: {
                 files: {
