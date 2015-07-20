@@ -81,14 +81,20 @@ module.exports = function(grunt) {
             options: {
                 reset: grunt.option('reset') || false,
                 stoponerror: false,
-                remotePath: 'http://arsenalplayerv2.vagrant.rippleffect.com/',
-                remoteFiles: ['features/']
+                doctype: 'HTML5',
+                // Set your local site and urls you want to check here
+                remotePath: 'http://lfc.local/',
+                remoteFiles: [' ', 'kit/'],
+                // You need to have a local version of the w3c validator installed on your computer / network
+                serverUrl: 'http://localhost/w3c-validator/check'
+            },
+            files: {
             }
         },
         kss: {
             options: {
                 css: '../css/styles.css',
-                template: '/Users/ahughes/Sites/php-skeleton/assets/grunt/nice-kss',
+                template: '/Users/ahughes/Sites/php-skeleton/assets/grunt/nice-kss', // This should be the path to a better KSS template
             },
             dist: {
                 files: {

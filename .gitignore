@@ -7,3 +7,6 @@ assets/js/main.js.map
 assets/js/main.min.js
 assets/js/main.min.js.map
 node_modules/
+_tempvlidation.html
+validation-report.json
+validation-status.json

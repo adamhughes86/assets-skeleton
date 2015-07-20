@@ -1,0 +1,29 @@
+// Buttons
+//
+// We set a base level of styling across all core html elements. This is to remain simplistic and anything requiring more advanced styling will require classes.
+//
+// Styleguide 4
+
+
+// Buttons - styles
+//
+// Core headings based on a Perfect Fourth (1.333) ratio.
+// http://www.modularscale.com/?16&px&1.333&web&text
+//
+// .button - This class can be on any element
+//
+// Markup:
+// <a class=" {{modifier_class}}">Example button</a>
+// <button class=" {{modifier_class}}">Example button</button>
+//
+// Styleguide 4.1
+
+button {
+    
+}
+.button {
+    background:orange;
+    color:green;
+    border:0;
+    outline:0;
+}

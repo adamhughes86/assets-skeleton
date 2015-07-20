@@ -10,8 +10,6 @@
 // Core headings based on a Perfect Fourth (1.333) ratio.
 // http://www.modularscale.com/?16&px&1.333&web&text
 //
-// .styled - basic styled headings
-//
 // Markup:
 // <h1 class=" {{modifier_class}}">h1. Heading</h1>
 // <h2 class=" {{modifier_class}}">h2. Heading</h2>
@@ -28,12 +26,6 @@ h1, h2, h3, h4, h5, h6 {
     clear:both;
     line-height: 1em;
     font-family: $primary-font;
-    
-    &.styled {
-        font-family: monospace;
-        color:green;
-        text-decoration: underline;
-    }
 }
 h1 {
     @include font-size(50.517);
@@ -159,6 +151,23 @@ li {
 
 ul {
     
+}
+
+
+// Address
+//
+// Address block
+//
+// Markup:
+// <address>
+// 1 High Street
+// Awesome Town
+// AT13 7RG
+// </address>
+//
+// Styleguide 2.7
+
+address {
 }
 
 
