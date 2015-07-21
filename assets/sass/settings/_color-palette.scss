@@ -4,6 +4,7 @@
 //
 // .fill-zeus       - Hex: 2a241d - this is a highlight
 // .fill-supernova  - f1ca00
+// .fill-customBlack - 000
 //
 // Markup:
 // <span class="kss-color {{modifier_class}}"></span>
@@ -11,10 +12,10 @@
 // Styleguide 1
 
 $colorPalette: (
-    customBlack  #000,
-    customWhite  #fff,
-    zeus  #2a241d,
-    supernova  #f1ca00
+    customBlack : #000,
+    customWhite : #fff,
+    zeus : #2a241d,
+    supernova : #f1ca00
 );
 
 @each $color in $colorPalette {
@@ -25,6 +26,17 @@ $colorPalette: (
         background-color:nth($color, 2);
     }
 }
+
+@function color($key) {
+    @if map-has-key($colorPalette, $key) {
+        @return map-get($colorPalette, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $colorPalette.";
+    @return null;
+}
+
+// background-color: color(zeus);
 
 .kss-color {
     width:60px;
