@@ -13,8 +13,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="public/kss.css">
-    <link rel="stylesheet" href="../css/styles.css">
-
+    {{{styles}}}
     
     <script type="text/javascript">
         /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
@@ -31,90 +30,116 @@
 
     <nav class="kss-nav">
         <a class="kss-nav__item" href="./">0 - Overview</a>
+        {{#eachRoot}}
 
-        <a class="kss-nav__item" href="section-1.html">1 - Colour Palette</a>
+        <a class="kss-nav__item" href="section-{{referenceURI}}.html">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}} - {{header}}</a>
 
+        {{#ifReference ../rootName}}
 
+            {{#eachSection reference}}
+            {{#ifDepth 2}}
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-{{../../referenceURI}}.html#kssref-{{referenceURI}}">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}} - {{header}}</a>
+
+            {{/ifDepth}}
+            {{/eachSection}}
         
-
-        <a class="kss-nav__item" href="section-2.html">2 - Typography</a>
-
-
-        <a class="kss-nav__item" href="section-3.html">3 - Icons</a>
-
-
-        <a class="kss-nav__item" href="section-4.html">4 - Buttons</a>
-
-
-        <a class="kss-nav__item" href="section-5.html">5 - Forms</a>
-
-
-        <a class="kss-nav__item" href="section-6.html">6 - Tables</a>
-
-
-        <a class="kss-nav__item" href="section-7.html">7 - Example Content Page</a>
-
+        {{/ifReference}}
+        {{/eachRoot}}
     </nav>
 </div>
     
 
 <article role="main" class="kss-main">
+{{#if homepage}}
+  <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+    {{{homepage}}}
+  </div>
+{{else}}
 
-      <div id="kssref-1" class="kss-section kss-section--depth-1">
+  {{!
+    Display each section, in order.
+
+    The "root" element comes first in this loop, and can be detected using
+    the "#ifDepth 1" block as seen below.
+  }}
+  {{#eachSection rootName}}
+    {{#ifDepth 1}}
+      <div id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
+    {{else}}
+      <section id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
+    {{/ifDepth}}
 
     <div class="kss-top-info kss-style">
-      <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-1">
-          1 - Colour Palette
+      <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+        <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
+          {{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}} - {{header}}
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
-      </h1>
+      </h{{depth}}>
 
+    {{#if parameters}}
+      <ul class="kss-parameters">
+      {{#eachParameter}}
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">{{name}}</code>
+          <div class="kss-parameters__description">{{{description}}}</div>
+        </li>
+      {{/eachParameter}}
+      </ul>
+    {{/if}}
 
+    {{#if description}}
       <div class="kss-description">
-        <p>Primary and secondary colours are defined in settings/_colour-palette.scss. We use actual colour names to define the variables. This prevents ambiguation when naming e.g. $grey, $lightGrey, $lighterGrey.</p>
-
+        {{{description}}}
       </div>
+    {{/if}}
     </div>
 
+    {{#if markup}}
     <div class="kss-modifier__wrapper">
 
+        {{#if modifiers}}
         <ul class="kss-modifier__info kss-style">
             <li class="kss-modifier__info-name kss-style">Default styling</li>
 
-                <li class="kss-modifier__info-name kss-style">.fill-zeus - <span class="kss-modifier__info-desc kss-style">Hex: 2a241d - this is a highlight</span></li>
-                <li class="kss-modifier__info-name kss-style">.fill-supernova - <span class="kss-modifier__info-desc kss-style">f1ca00</span></li>
+            {{#eachModifier}}
+                <li class="kss-modifier__info-name kss-style">{{name}} - <span class="kss-modifier__info-desc kss-style">{{{description}}}</span></li>
+            {{/eachModifier}}
         </ul>
+        {{/if}}
 
         <div class="kss-modifier__example">
-            <span class="kss-color [modifier class]"></span>
+            {{{markup}}}
             
             <div class="kss-modifier__smallname kss-style">
                 Default
             </div>
         </div>
           
+        {{#eachModifier}}
         <div class="kss-modifier__example">
-            <span class="kss-color fill-zeus"></span>
+            {{{markup}}}
             
             <div class="kss-modifier__smallname kss-style">
-                .fill-zeus
+                {{name}}
             </div>
         </div>
-        <div class="kss-modifier__example">
-            <span class="kss-color fill-supernova"></span>
-            
-            <div class="kss-modifier__smallname kss-style">
-                .fill-supernova
-            </div>
-        </div>
+        {{/eachModifier}}
     </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;span class=&quot;kss-color [modifier class]&quot;&gt;&lt;/span&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
       </div>
+    {{/if}}
 
+    {{#ifDepth 1}}
       </div>
+    {{else}}
+      </section>
+    {{/ifDepth}}
+  {{/eachSection}}
+{{/if}}
 </article>
 
 <!-- SCRIPTS -->
@@ -123,8 +148,15 @@
 <script>
   prettyPrint();
 </script>
+{{{scripts}}}
 
-
+{{! This will only be included in the demo page. }}
+{{#if argv.xdemo}}
+  <footer class="kss-github">
+    <!-- https://github.com/blog/273-github-ribbons -->
+    <a href="https://github.com/kss-node/kss-node"><img src="public/github-fork--black.png" alt="Fork me on GitHub"></a>
+  </footer>
+{{/if}}
 
 <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>

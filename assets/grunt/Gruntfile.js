@@ -60,6 +60,19 @@ module.exports = function(grunt) {
                 padding: 5
             }
         },
+        grunticon: {
+            svgIcons: {
+                files: [{
+                    expand: true,
+                    cwd: '../images/svg/input',
+                    src: ['*.svg', '*.png'],
+                    dest: '../images/svg/output'
+                }],
+                options: {
+                    enhanceSVG: true
+                }
+            }
+        },
         sass: {
             dist: {
                 files: [{
@@ -77,9 +90,26 @@ module.exports = function(grunt) {
                 smarttabs : true
             }
         },
+        validation: {
+            options: {
+                reset: grunt.option('reset') || false,
+                stoponerror: false,
+                doctype: 'HTML5',
+                remotePath: 'http://player.arsenal.com/', // Set your testing site (remote or local)
+                remoteFiles: [
+                    ' ',
+                    'features/',
+                    'features/video/6391/the-breakdown-fa-cup-final'
+                ], // Set the urls you want to test here
+                serverUrl: 'http://localhost/w3c-validator/check' // You need to have a local version of the w3c validator installed on your computer / network
+            },
+            files: {
+            }
+        },
         kss: {
             options: {
                 css: '../css/styles.css',
+                template: 'nice-kss', // This should be the path to a better KSS template
             },
             dist: {
                 files: {
@@ -125,6 +155,14 @@ module.exports = function(grunt) {
                     spawn: false,
                     livereload: true
                 }
+            },
+            svg : {
+                files: ['../images/svg/input/*'],
+                tasks: ['grunticon:svgIcons'],
+                options: {
+                    spawn: false,
+                    livereload: true
+                }
             }
         }
     });
@@ -137,14 +175,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-grunticon');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-kss');
+    grunt.loadNpmTasks('grunt-html-validation');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['bower:install', 'concat', 'uglify', 'sprite', 'sass', 'jshint', 'notify_hooks']);
-    grunt.registerTask('dev', ['concat', 'sprite', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
+    grunt.registerTask('default', ['bower:install', 'concat', 'uglify', 'grunticon:svgIcons', 'sass', 'jshint', 'notify_hooks']);
+    grunt.registerTask('dev', ['concat', 'sprite', 'grunticon:svgIcons', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
     grunt.registerTask('components', ['bower:install', 'concat']);
-
+    grunt.registerTask('validate', ['validation']);
 };

@@ -35,8 +35,6 @@
         <a class="kss-nav__item" href="section-1.html">1 - Colour Palette</a>
 
 
-        
-
         <a class="kss-nav__item" href="section-2.html">2 - Typography</a>
 
 
@@ -52,6 +50,8 @@
         <a class="kss-nav__item" href="section-6.html">6 - Tables</a>
 
 
+        
+
         <a class="kss-nav__item" href="section-7.html">7 - Example Content Page</a>
 
     </nav>
@@ -60,58 +60,76 @@
 
 <article role="main" class="kss-main">
 
-      <div id="kssref-1" class="kss-section kss-section--depth-1">
+      <div id="kssref-6" class="kss-section kss-section--depth-1">
 
     <div class="kss-top-info kss-style">
       <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-1">
-          1 - Colour Palette
+        <a class="kss-title__permalink" href="#kssref-6">
+          6 - Tables
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>Primary and secondary colours are defined in settings/_colour-palette.scss. We use actual colour names to define the variables. This prevents ambiguation when naming e.g. $grey, $lightGrey, $lighterGrey.</p>
+        <p>Tables are difficult to get working resposively. These styles will give you a decent starting point but extra consideration will be needed for tablular content.</p>
 
       </div>
     </div>
 
     <div class="kss-modifier__wrapper">
 
-        <ul class="kss-modifier__info kss-style">
-            <li class="kss-modifier__info-name kss-style">Default styling</li>
-
-                <li class="kss-modifier__info-name kss-style">.fill-zeus - <span class="kss-modifier__info-desc kss-style">Hex: 2a241d - this is a highlight</span></li>
-                <li class="kss-modifier__info-name kss-style">.fill-supernova - <span class="kss-modifier__info-desc kss-style">f1ca00</span></li>
-        </ul>
 
         <div class="kss-modifier__example">
-            <span class="kss-color [modifier class]"></span>
+            <table cellspacing="0" cellpadding="0">
+    <tr>
+        <th>Table Header 1</th>
+        <th>Table Header 2</th>
+        <th>Table Header 3</th>
+    </tr>
+    <tr>
+        <td>Division 1</td>
+        <td>Division 2</td>
+        <td>Division 3</td>
+    </tr>
+    <tr>
+        <td>Division 1</td>
+        <td>Division 2</td>
+        <td>Division 3</td>
+    </tr>
+    <tr>
+        <td colspan="3">Full width cell</td>
+    </tr>
+</table>
             
             <div class="kss-modifier__smallname kss-style">
                 Default
             </div>
         </div>
           
-        <div class="kss-modifier__example">
-            <span class="kss-color fill-zeus"></span>
-            
-            <div class="kss-modifier__smallname kss-style">
-                .fill-zeus
-            </div>
-        </div>
-        <div class="kss-modifier__example">
-            <span class="kss-color fill-supernova"></span>
-            
-            <div class="kss-modifier__smallname kss-style">
-                .fill-supernova
-            </div>
-        </div>
     </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;span class=&quot;kss-color [modifier class]&quot;&gt;&lt;/span&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Table Header 1&lt;/th&gt;
+        &lt;th&gt;Table Header 2&lt;/th&gt;
+        &lt;th&gt;Table Header 3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Division 1&lt;/td&gt;
+        &lt;td&gt;Division 2&lt;/td&gt;
+        &lt;td&gt;Division 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Division 1&lt;/td&gt;
+        &lt;td&gt;Division 2&lt;/td&gt;
+        &lt;td&gt;Division 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan=&quot;3&quot;&gt;Full width cell&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
       </div>
 
       </div>

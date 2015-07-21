@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>KSS: Living Style Guide</title>
+
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="public/kss.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    
+    <script type="text/javascript">
+        /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+        !function(){function e(e,n,t,o){"use strict";var r=window.document.createElement("link"),a=n||window.document.getElementsByTagName("script")[0],i=window.document.styleSheets;return r.rel="stylesheet",r.href=e,r.media="only x",o&&(r.onload=o),a.parentNode.insertBefore(r,a),r.onloadcssdefined=function(n){for(var t,o=0;o<i.length;o++)i[o].href&&i[o].href.indexOf(e)>-1&&(t=!0);t?n():setTimeout(function(){r.onloadcssdefined(n)})},r.onloadcssdefined(function(){r.media=t||"all"}),r}function n(e,n){e.onload=function(){e.onload=null,n&&n.call(e)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}!function(t){var o=function(r,a){"use strict";if(r&&3===r.length){var i=t.navigator,c=t.document,d=t.Image,s=!(!c.createElementNS||!c.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!c.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||t.opera&&-1===i.userAgent.indexOf("Chrome")||-1!==i.userAgent.indexOf("Series40")),l=new d;l.onerror=function(){o.method="png",o.href=r[2],e(r[2])},l.onload=function(){var t=1===l.width&&1===l.height,i=r[t&&s?0:t?1:2];t&&s?o.method="svg":t?o.method="datapng":o.method="png",o.href=i,n(e(i),a)},l.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",c.documentElement.className+=" grunticon"}};o.loadCSS=e,o.onloadCSS=n,t.grunticon=o}(this),function(e,n){"use strict";var t=n.document,o="grunticon:",r=function(e){if(t.attachEvent?"complete"===t.readyState:"loading"!==t.readyState)e();else{var n=!1;t.addEventListener("readystatechange",function(){n||(n=!0,e())},!1)}},a=function(e){return n.document.querySelector('link[href$="'+e+'"]')},i=function(e){var n,t,r,a,i,c,d={};if(n=e.sheet,!n)return d;t=n.cssRules?n.cssRules:n.rules;for(var s=0;s<t.length;s++)r=t[s].cssText,a=o+t[s].selectorText,i=r.split(");")[0].match(/US\-ASCII\,([^"']+)/),i&&i[1]&&(c=decodeURIComponent(i[1]),d[a]=c);return d},c=function(e){var n,r,a,i;a="data-grunticon-embed";for(var c in e){i=c.slice(o.length);try{n=t.querySelectorAll(i)}catch(d){continue}r=[];for(var s=0;s<n.length;s++)null!==n[s].getAttribute(a)&&r.push(n[s]);if(r.length)for(s=0;s<r.length;s++)r[s].innerHTML=e[c],r[s].style.backgroundImage="none",r[s].removeAttribute(a)}return r},d=function(n){"svg"===e.method&&r(function(){c(i(a(e.href))),"function"==typeof n&&n()})};e.embedIcons=c,e.getCSS=a,e.getIcons=i,e.ready=r,e.svgLoadedCallback=d,e.embedSVG=d}(grunticon,this)}();
+        grunticon(["../images/svg/output/icons.data.svg.css", "../images/svg/output/icons.data.png.css", "../images/svg/output/icons.fallback.css"] , grunticon.svgLoadedCallback);
+    </script>
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+    <header class="kss-header">
+        <h1 class="kss-doc-title">Living Style Guide</h1>
+    </header>
+
+    <nav class="kss-nav">
+        <a class="kss-nav__item" href="./">0 - Overview</a>
+
+        <a class="kss-nav__item" href="section-1.html">1 - Colour Palette</a>
+
+
+        <a class="kss-nav__item" href="section-2.html">2 - Typography</a>
+
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-2.html#kssref-2-1">2.1 - Headings</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-2.html#kssref-2-2">2.2 - Paragraphs</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-2.html#kssref-2-3">2.3 - Blockquote</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-2.html#kssref-2-4">2.4 - Definition List</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-2.html#kssref-2-5">2.5 - Ordered List</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-2.html#kssref-2-6">2.6 - Unordered List</a>
+
+
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-2.html#kssref-2-7">2.7 - Address</a>
+
+        
+
+        <a class="kss-nav__item" href="section-3.html">3 - Icons</a>
+
+
+        <a class="kss-nav__item" href="section-4.html">4 - Buttons</a>
+
+
+        <a class="kss-nav__item" href="section-5.html">5 - Forms</a>
+
+
+        <a class="kss-nav__item" href="section-6.html">6 - Tables</a>
+
+
+        <a class="kss-nav__item" href="section-7.html">7 - Example Content Page</a>
+
+    </nav>
+</div>
+    
+
+<article role="main" class="kss-main">
+
+      <div id="kssref-2" class="kss-section kss-section--depth-1">
+
+    <div class="kss-top-info kss-style">
+      <h1 class="kss-title kss-title--level-1">
+        <a class="kss-title__permalink" href="#kssref-2">
+          2 - Typography
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h1>
+
+
+      <div class="kss-description">
+        <p>We set a base level of styling across all core html elements. This is to remain simplistic and anything requiring more advanced styling will require classes.</p>
+
+      </div>
+    </div>
+
+
+      </div>
+      <section id="kssref-2-1" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-2-1">
+          2.1 - Headings
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Core headings based on a Perfect Fourth (1.333) ratio.
+<a href="http://www.modularscale.com/?16&amp;px&amp;1.333&amp;web&amp;text">http://www.modularscale.com/?16&amp;px&amp;1.333&amp;web&amp;text</a></p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+            <h1 class=" [modifier class]">h1. Heading</h1>
+<h2 class=" [modifier class]">h2. Heading</h2>
+<h3 class=" [modifier class]">h3. Heading</h3>
+<h4 class=" [modifier class]">h4. Heading</h4>
+<h5 class=" [modifier class]">h5. Heading</h5>
+<h6 class=" [modifier class]">h6. Heading</h6>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1 class=&quot; [modifier class]&quot;&gt;h1. Heading&lt;/h1&gt;
+&lt;h2 class=&quot; [modifier class]&quot;&gt;h2. Heading&lt;/h2&gt;
+&lt;h3 class=&quot; [modifier class]&quot;&gt;h3. Heading&lt;/h3&gt;
+&lt;h4 class=&quot; [modifier class]&quot;&gt;h4. Heading&lt;/h4&gt;
+&lt;h5 class=&quot; [modifier class]&quot;&gt;h5. Heading&lt;/h5&gt;
+&lt;h6 class=&quot; [modifier class]&quot;&gt;h6. Heading&lt;/h6&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-2-2" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-2-2">
+          2.2 - Paragraphs
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Standard text to be used as a base for styling with classes. The base font size is 16px but all fonts are then converted to rem&#39;s.</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+                <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. <strong>Praesent mattis</strong>, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+    <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot; title=&quot;test link&quot;&gt;test link&lt;/a&gt; adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. &lt;strong&gt;Praesent mattis&lt;/strong&gt;, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, &lt;em&gt;emphasis&lt;/em&gt; consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-2-3" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-2-3">
+          2.3 - Blockquote
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Blockquote to be used on it&#39;s own or within a paragraph</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+                <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+    </blockquote>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;blockquote cite=&quot;http://www.worldwildlife.org/who/index.html&quot;&gt;
+        For 50 years, WWF has been protecting the future of nature. The world&#x27;s leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+    &lt;/blockquote&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-2-4" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-2-4">
+          2.4 - Definition List
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Definition lists are used in ........</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+                <dl>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+        <dd>This is a definition list division.</dd>
+        <dd>This is a definition list division.</dd>
+    </dl>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;dl&gt;
+        &lt;dt&gt;Definition List Title&lt;/dt&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;dt&gt;Definition List Title&lt;/dt&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+    &lt;/dl&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-2-5" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-2-5">
+          2.5 - Ordered List
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Ordered lists are used in ........</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+                <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ol>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;ol&gt;
+        &lt;li&gt;List Item 1&lt;/li&gt;
+        &lt;li&gt;List Item 2&lt;/li&gt;
+        &lt;li&gt;List Item 3&lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-2-6" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-2-6">
+          2.6 - Unordered List
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Unordered lists are used in ........</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+                <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">    &lt;ul&gt;
+        &lt;li&gt;List Item 1&lt;/li&gt;
+        &lt;li&gt;List Item 2&lt;/li&gt;
+        &lt;li&gt;List Item 3&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-2-7" class="kss-section kss-section--depth-2">
+
+    <div class="kss-top-info kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-2-7">
+          2.7 - Address
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>The <code>address</code> tag is not used for general postal address unless that address directly relates to the document. The <code>address</code> tag should be used for providing contact info for document maintainers. This can include a feedback address (email or postal), phone numbers or links to external web pages. As a side note, if you need to format an address that doesn&#39;t fall into this criteria use HTML5 microdata.</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+            <address>
+1 High Street
+Awesome Town
+AT13 7RG
+</address>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;address&gt;
+1 High Street
+Awesome Town
+AT13 7RG
+&lt;/address&gt;</code></pre>
+      </div>
+
+      </section>
+</article>
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+<script>
+  prettyPrint();
+</script>
+
+
+
+<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

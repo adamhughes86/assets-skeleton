@@ -1,0 +1,93 @@
+// Buttons
+//
+// We set a base level of styling across all core html elements. This is to remain simplistic and anything requiring more advanced styling will require classes.
+//
+// Styleguide 4
+
+
+// Buttons - Basic
+//
+// Button styles can be placed on any element with the .button class. However it is best if it is an <code>[a]</code> for links to other pages / sites or a <code>[button]</code> if it's for functionality.
+// The default button styles should be left alone if possible. This will leave a clean slate if a dramatically new button style needs applying.
+//
+// :visited - Shows the user links that have been visited
+// :focus - For tabbing and touch enabled devices
+// :hover - For mouseovers
+// :active - When the button is clicked / pressed
+//
+// Markup:
+// <a class=" button {{modifier_class}}">Example button</a>
+// <button class=" button {{modifier_class}}">Example button</button>
+//
+// Styleguide 4.1
+
+.button {
+    @include appearance(none);
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #000;
+    margin:0 5px 10px 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+
+    &:link {
+        // Don't know if this is needed. I feel like it should be covered by the main class
+    }
+    &:visited {
+        color:#666;
+    }
+    &:focus {
+        outline:2px solid #666;
+    }
+    &:hover {
+        background-color:#ebebeb;
+    }
+    &:active {
+        background-color:#ebebeb;
+        box-shadow: inset 0px 0px 1px 1px #666;
+    }
+}
+
+
+// Buttons - CTA
+//
+// Call to action buttons can be enhanced by applying a different class. We use the Sass extend function to carry across the default styles and then build on top of it.
+//
+// :visited - Shows the user links that have been visited
+// :focus - For tabbing and touch enabled devices
+// :hover - For mouseovers
+// :active - When the button is clicked / pressed
+//
+// Markup:
+// <a class=" button--cta {{modifier_class}}">Call to action</a>
+//
+// Styleguide 4.2
+
+.button--cta {
+    @extend .button;
+    padding:10px 20px;
+    min-width: 300px;
+    border:1px solid #5dc21e;
+    @include font-size(21);
+    background-color:#107c10;
+    color:#fff;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:visited {
+        color:#fff;
+        font-weight: normal;
+    }
+    &:focus {
+        outline:2px solid #6b6b6b;
+    }
+    &:hover {
+        background-color:#5dc21e;
+    }
+    &:active {
+        background-color:#5dc21e;
+        box-shadow: inset 0px 0px 1px 1px #107c10;
+    }
+}
