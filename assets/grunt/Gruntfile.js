@@ -98,8 +98,7 @@ module.exports = function(grunt) {
                 remotePath: 'http://player.arsenal.com/', // Set your testing site (remote or local)
                 remoteFiles: [
                     ' ',
-                    'features/',
-                    'features/video/6391/the-breakdown-fa-cup-final'
+                    'features/'
                 ], // Set the urls you want to test here
                 serverUrl: 'http://localhost/w3c-validator/check' // You need to have a local version of the w3c validator installed on your computer / network
             },

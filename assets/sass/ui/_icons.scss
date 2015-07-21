@@ -93,6 +93,36 @@
 }
 
 
+// Vine
+//
+// A series of social icons that we can use
+//
+// :hover - The hovered state
+// .large - large version
+//
+// Markup:
+// <div class="icon-vine {{modifier_class}}" data-grunticon-embed></div>
+//
+// Styleguide 3.4
+
+.icon-vine {
+    width:40px;
+    height:40px;
+    transition: all 1s;
+
+    path {
+        transition: all 0.4s;
+    }
+    &:hover path {
+        fill:#3f729b;
+    }
+    &.large {
+        height:80px;
+        width:80px;
+    }
+}
+
+
 // Magnifier
 //
 // Can be used for search
@@ -100,7 +130,7 @@
 // Markup:
 // <div class="icon-magnifier" data-grunticon-embed></div>
 //
-// Styleguide 3.4
+// Styleguide 3.5
 
 
 .icon-magnifier {
