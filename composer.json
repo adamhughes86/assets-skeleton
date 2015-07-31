@@ -1,0 +1,14 @@
+{
+  "name": "rippleffect/frontend-php-skeleton",
+  "type": "library",
+  "description": "All assets and applications required by frontend devs on PHP websites",
+  "authors": [
+    {
+      "name": "Adam Hughes",
+      "email": "ahughes@rippleffect.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  }
+}
