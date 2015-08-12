@@ -6,19 +6,6 @@ module.exports = function(grunt) {
         // 2. Configuration for module files goes here.
         // plugins http://gruntjs.com/plugins
 
-        bower: {
-            install: {
-                options: {
-                    targetDir: '../libs',
-                    layout: 'byComponent',
-                    install: true,
-                    verbose: false,
-                    cleanTargetDir: true,
-                    cleanBowerDir: true,
-                    bowerOptions: {}
-                }
-            }
-        },
         concat: {
             vendor : {
                 src: [
@@ -71,6 +58,22 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        scsslint: {
+            allFiles: [
+                '../sass/**/*.scss',
+            ],
+            options: {
+                config: '.scss-lint.yml',
+                colorizeOutput: true,
+                exclude: [
+                    '../sass/bourbon/**/*.scss',
+                    '../sass/styles/normalize.scss',
+                    '../sass/plugins/**/*.scss',
+                    '../sass/includes/iconfont.scss',
+                    '../sass/includes/sprite.scss'
+                ]
+            },
+        },
         jshint: {
             all: ['Gruntfile.js', '../js/app.js'],
             options: {
@@ -96,7 +99,7 @@ module.exports = function(grunt) {
         watch: {
             css : {
                 files: ['../sass/**/*.scss'],
-                tasks: ['sass', 'kss'],
+                tasks: ['scsslint', 'sass', 'kss'],
                 options: {
                     spawn: false,
                     livereload: true
@@ -130,12 +133,12 @@ module.exports = function(grunt) {
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
-    grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-kss');
@@ -144,7 +147,5 @@ module.exports = function(grunt) {
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['concat', 'uglify', 'sprite', 'sass', 'jshint', 'notify_hooks']);
-    grunt.registerTask('dev', ['concat', 'sprite', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
-    grunt.registerTask('components', ['bower:install', 'concat']);
-
+    grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
 };
