@@ -12,36 +12,36 @@
 // Styleguide 1
 
 $colorPalette: (
-    customBlack : #000,
-    customWhite : #fff,
-    zeus : #2a241d,
-    supernova : #f1ca00
+  customBlack: #000,
+  customWhite: #fff,
+  zeus: #2a241d,
+  supernova: #f1ca00
 );
 
 @each $color in $colorPalette {
-    .color-#{nth($color, 1)} {
-        color:nth($color, 2);
-    }
-    .fill-#{nth($color, 1)} {
-        background-color:nth($color, 2);
-    }
+  .color-#{nth($color, 1)} {
+    color: nth($color, 2);
+  }
+  .fill-#{nth($color, 1)} {
+    background-color: nth($color, 2);
+  }
 }
 
 @function color($key) {
-    @if map-has-key($colorPalette, $key) {
-        @return map-get($colorPalette, $key);
-    }
+  @if map-has-key($colorPalette, $key) {
+    @return map-get($colorPalette, $key);
+  }
 
-    @warn "Unknown `#{$key}` in $colorPalette.";
-    @return null;
+  @warn "Unknown `#{$key}` in $colorPalette.";
+  @return null;
 }
 
 // background-color: color(zeus);
 
 .kss-color {
-    width:60px;
-    height:60px;
-    transform: rotate(45deg);
-    display:inline-block;
-    margin:20px;
+  display: inline-block;
+  margin: 20px;
+  height: 60px;
+  width: 60px;
+  transform: rotate(45deg);
 }

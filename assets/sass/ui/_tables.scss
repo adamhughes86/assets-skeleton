@@ -4,24 +4,24 @@
 //
 // Markup:
 // <table cellspacing="0" cellpadding="0">
-//     <tr>
-//         <th>Table Header 1</th>
-//         <th>Table Header 2</th>
-//         <th>Table Header 3</th>
-//     </tr>
-//     <tr>
-//         <td>Division 1</td>
-//         <td>Division 2</td>
-//         <td>Division 3</td>
-//     </tr>
-//     <tr>
-//         <td>Division 1</td>
-//         <td>Division 2</td>
-//         <td>Division 3</td>
-//     </tr>
-//     <tr>
-//         <td colspan="3">Full width cell</td>
-//     </tr>
+//   <tr>
+//     <th>Table Header 1</th>
+//     <th>Table Header 2</th>
+//     <th>Table Header 3</th>
+//   </tr>
+//   <tr>
+//     <td>Division 1</td>
+//     <td>Division 2</td>
+//     <td>Division 3</td>
+//   </tr>
+//   <tr>
+//     <td>Division 1</td>
+//     <td>Division 2</td>
+//     <td>Division 3</td>
+//   </tr>
+//   <tr>
+//     <td colspan="3">Full width cell</td>
+//   </tr>
 // </table>
 //
 // Styleguide 6
@@ -29,37 +29,37 @@
 $tableBorder : #999;
 
 table {
-    width:100%;
-    border: 1px solid $tableBorder;
+  width: 100%;
+  border: 1px solid $tableBorder;
 }
 tr {
-    background-color:#fff;
-    border-top: 1px solid $tableBorder;
+  background-color: #fff;
+  border-top: 1px solid $tableBorder;
 
-    &:first-child {
-        border-top:0;
-    }
-    &:nth-child(even) {
-        background-color:#eee;
-    }
+  &:first-child {
+    border-top: 0;
+  }
+  &:nth-child(even) {
+    background-color: #eee;
+  }
 }
 th {
-    padding:10px 20px;
-    text-align: left;
-    vertical-align: middle;
-    border-left: 1px solid $tableBorder;
+  padding: 10px 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-left: 1px solid $tableBorder;
 
-    &:first-child {
-        border-left:0;
-    }
+  &:first-child {
+    border-left: 0;
+  }
 }
 td {
-    padding:10px 20px;
-    text-align: left;
-    vertical-align: middle;
-    border-left: 1px solid $tableBorder;
+  padding: 10px 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-left: 1px solid $tableBorder;
 
-    &:first-child {
-        border-left:0;
-    }
+  &:first-child {
+    border-left: 0;
+  }
 }

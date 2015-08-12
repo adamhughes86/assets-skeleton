@@ -2,7 +2,7 @@
 
 // Core - required for setting the project. Sometimes pulled in with Bower
 @import 'core/bourbon/bourbon';
-@import 'core/normalize.scss';
+@import 'core/normalize';
 
 // Vendor - settings and styles from Vendor plugins and components. These should be left as default
 // @import 'vendor/slick.scss';

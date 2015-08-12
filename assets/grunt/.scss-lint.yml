@@ -12,6 +12,8 @@ linters:
     enabled: false
   Comment:
     enabled: true
+  DeclarationOrder:
+    enabled: false
   DisableLinterReason:
     enabled: true
   DuplicateProperty:
@@ -50,7 +52,7 @@ linters:
   NameFormat:
     enabled: false
   NestingDepth:
-    max_depth: 4
+    max_depth: 5
     ignore_parent_selectors: false
   PlaceholderInExtend:
     enabled: false
@@ -91,9 +93,9 @@ linters:
     allow_single_line_padding: false
     style: space;
   SpaceBetweenParens:
-    spaces: 0;
+    enabled: false
   StringQuotes:
-    style: single_quotes;
+    style: single_quotes
   TrailingSemicolon:
     enabled: true
   TrailingWhitespace:

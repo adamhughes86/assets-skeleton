@@ -7,6 +7,7 @@ assets/js/main.js.map
 assets/js/main.min.js
 assets/js/main.min.js.map
 node_modules/
+bower_components/
 .idea
 _tempvlidation.html
 validation-report.json

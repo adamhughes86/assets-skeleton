@@ -1,26 +1,26 @@
 // Custom Mixins
 
 @mixin font-size($sizeValue) {
- $remValue: ($sizeValue / 10);
- $pxValue: $sizeValue;
- font-size: $pxValue+px; 
- font-size: $remValue+rem;
+  $remValue: ($sizeValue / 10);
+  $pxValue: $sizeValue;
+  font-size: $pxValue+px;
+  font-size: $remValue+rem; // scss-lint:disable DuplicateProperty
 }
 
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
+  filter: alpha(opacity=$opacity-ie); // IE8
 }
 
 // RGBA Fallback
 @mixin fallbackColor($color, $opacity) {
-  background-color:$color;
-  background-color: rgba($color, $opacity);
+  background-color: $color;
+  background-color: rgba($color, $opacity); // scss-lint:disable DuplicateProperty
 }
 
 @mixin pageWrap($width:1260px) {
-  max-width: $width;
-  width: 100%;
   margin: 0 auto;
+  width: 100%;
+  max-width: $width;
 }

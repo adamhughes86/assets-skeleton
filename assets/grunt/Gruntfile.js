@@ -37,7 +37,7 @@ module.exports = function(grunt) {
             all: {
                 src: '../images/sprites/*.png',
                 dest: '../images/sprite.png',
-                destCss: '../sass/includes/_sprite.scss',
+                destCss: '../sass/settings/_sprite.scss',
                 imgPath: '../../assets/images/sprite.png',
                 padding: 5
             }
@@ -74,11 +74,10 @@ module.exports = function(grunt) {
                 config: '.scss-lint.yml',
                 colorizeOutput: true,
                 exclude: [
-                    '../sass/bourbon/**/*.scss',
-                    '../sass/styles/normalize.scss',
-                    '../sass/plugins/**/*.scss',
-                    '../sass/includes/iconfont.scss',
-                    '../sass/includes/sprite.scss'
+                    '../sass/core/bourbon/**/*.scss',
+                    '../sass/core/_normalize.scss',
+                    '../sass/settings/_iconfont.scss',
+                    '../sass/settings/_sprite.scss'
                 ]
             },
         },

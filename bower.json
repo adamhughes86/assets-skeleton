@@ -1,0 +1,13 @@
+{
+  "name": "bower.json",
+  "version": "1.0.0",
+  "authors": [
+    "Adam Hughes <ahughes@rippleffect.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "*",
+    "modernizr": "~2.8.3",
+    "enquire": "~2.1.2"
+  }
+}
