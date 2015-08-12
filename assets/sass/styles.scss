@@ -1,24 +1,24 @@
 // Variables
-@import 'includes/fonts.scss';
-@import 'includes/variables.scss';
-@import 'includes/sprite.scss';
-@import 'includes/iconfont.scss';
+@import 'includes/fonts';
+@import 'includes/variables';
+@import 'includes/sprite';
+@import 'includes/iconfont';
 //Plugins
 
-@import 'plugins/slick.scss';
+@import 'plugins/slick';
 
 // Mixins
 @import 'bourbon/bourbon';
-@import 'includes/mixins.scss';
-@import 'includes/media-queries.scss';
+@import 'includes/mixins';
+@import 'includes/media-queries';
 
 // Normlize and Base
-@import 'styles/normalize.scss';
-@import 'styles/base.scss';
+@import 'styles/normalize';
+@import 'styles/base';
 
 // Main Styles
-@import 'styles/main.scss';
-@import 'modules/header.scss';
-@import 'modules/nav.scss';
-@import 'modules/footer.scss';
-@import 'modules/slick.scss';
+@import 'styles/main';
+@import 'modules/header';
+@import 'modules/nav';
+@import 'modules/footer';
+@import 'modules/slick';

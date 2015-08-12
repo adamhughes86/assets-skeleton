@@ -1,0 +1,21 @@
+// Comment
+.footer {
+  border: none;
+  color: blue !important;
+  background-color : #ebebeb;
+  background-color: rgba(255, 255, 255, 0.5); // scss-lint:disable DuplicateProperty
+}
+.item {
+  
+}
+.button, .button-alt {
+  &:hover {
+    color: #eee;
+  }
+}
+
+.wrapper,
+.wrap{
+    color: #EEEEEE;
+}
+/* comment */
