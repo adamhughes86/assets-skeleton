@@ -1,9 +1,11 @@
+// CSS should follow CCF1 coding standard
+
 // Core - required for setting the project. Sometimes pulled in with Bower
 @import 'core/bourbon/bourbon';
 @import 'core/normalize.scss';
 
 // Vendor - settings and styles from Vendor plugins and components. These should be left as default
-//@import 'vendor/slick.scss';
+// @import 'vendor/slick.scss';
 
 // Settings - tend to do nothing on their own. Used in combination with other files
 @import 'settings/fonts';
@@ -13,7 +15,7 @@
 @import 'settings/mixins';
 @import 'settings/media-queries';
 
-// ui - Basic styles to be reused on every page
+// UI - Basic styles to be reused on every page
 @import 'ui/structure';
 @import 'ui/typography';
 @import 'ui/icons';
