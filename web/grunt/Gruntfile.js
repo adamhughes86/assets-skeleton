@@ -113,6 +113,18 @@ module.exports = function(grunt) {
                 }
             }
         },
+        phantomcss: {
+            options: {
+                mismatchTolerance: 0.05,
+                screenshots: 'regression-tests/baselines',
+                results: 'regression-tests/results',
+                viewportSize: [1280, 800],
+            },
+            src: [
+                'regression-tests/pre.js',
+                'regression-tests/js-tests/*.js'
+            ]
+        },
         notify_hooks: {
             options: {
                 enabled: true,
@@ -175,11 +187,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-kss');
     grunt.loadNpmTasks('grunt-html-validation');
+    grunt.loadNpmTasks('grunt-phantomcss');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['concat', 'uglify', 'grunticon:svgIcons', 'sass', 'jshint', 'notify_hooks']);
     grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
+    grunt.registerTask('regression', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'jshint', 'kss', 'phantomcss', 'notify_hooks']);
     grunt.registerTask('validate', ['validation']);
 };
