@@ -92,6 +92,19 @@ module.exports = function(grunt) {
                 ]
             },
         },
+        postcss: {
+            options: {
+                map: true, // inline sourcemaps
+                processors: [
+                    require('autoprefixer-core')({
+                        browsers: 'last 2 versions'
+                    })
+                ]
+            },
+            dist: {
+                src: '<%= pkg.assetsPath %>/css/*.css'
+            }
+        },
         jshint: {
             all: ['Gruntfile.js', '../js/app.js'],
             options: {
@@ -193,6 +206,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-scss-lint');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-grunticon');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -204,8 +218,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'grunticon:svgIcons', 'copy', 'sass', 'jshint', 'notify_hooks']);
-    grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'copy', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
-    grunt.registerTask('regression', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'jshint', 'kss', 'phantomcss', 'notify_hooks']);
+    grunt.registerTask('default', ['concat', 'uglify', 'grunticon:svgIcons', 'copy', 'sass', 'postcss', 'jshint', 'notify_hooks']);
+    grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'copy', 'sass', 'postcss', 'jshint', 'kss', 'notify_hooks', 'watch']);
+    grunt.registerTask('regression', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'postcss', 'jshint', 'kss', 'phantomcss', 'notify_hooks']);
     grunt.registerTask('validate', ['validation']);
 };

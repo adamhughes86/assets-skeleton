@@ -4,6 +4,7 @@
   "localPath": "/Users/ahughes/Sites/php-skeleton",
   "assetsPath": "../assets",
   "dependencies": {
+    "autoprefixer-core": "^5.2.1",
     "grunt": "~0.4.1",
     "grunt-bower-task": "^0.4.0",
     "grunt-cli": "*",
@@ -17,6 +18,7 @@
     "grunt-kss": "^2.0.0",
     "grunt-newer": "^1.1.1",
     "grunt-notify": "^0.3.1",
+    "grunt-postcss": "^0.5.5",
     "grunt-spritesmith": "4.2.0"
   },
   "devDependencies": {
