@@ -2,7 +2,6 @@
 
 // Core - required for setting the project. Sometimes pulled in with Bower
 @import 'core/bourbon/bourbon';
-@import 'core/normalize';
 
 // Vendor - settings and styles from Vendor plugins and components. These should be left as default
 // @import 'vendor/slick.scss';
@@ -14,6 +13,7 @@
 @import 'settings/sprite';
 @import 'settings/mixins';
 @import 'settings/media-queries';
+@import 'settings/icons-data-svg';
 
 // UI - Basic styles to be reused on every page
 @import 'ui/structure';
@@ -25,6 +25,7 @@
 
 // Components - reusable components and sections
 @import 'components/header';
+@import 'components/search';
 @import 'components/nav';
 @import 'components/footer';
 @import 'components/pagination';

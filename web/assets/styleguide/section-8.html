@@ -50,32 +50,32 @@
         <a class="kss-nav__item" href="section-6.html">6 - Tables</a>
 
 
-        
-
         <a class="kss-nav__item" href="section-7.html">7 - Example Content Page</a>
 
 
         <a class="kss-nav__item" href="section-8.html">8 - Search</a>
 
+
+        
     </nav>
 </div>
     
 
 <article role="main" class="kss-main">
 
-      <div id="kssref-6" class="kss-section kss-section--depth-1">
+      <div id="kssref-8" class="kss-section kss-section--depth-1">
 
     <div class="kss-top-info kss-style">
       <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-6">
-          6 - Tables
+        <a class="kss-title__permalink" href="#kssref-8">
+          8 - Search
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>Tables are difficult to get working resposively. These styles will give you a decent starting point but extra consideration will be needed for tablular content.</p>
+        <p>Semantic and accessible search form. Wrapped in a fieldset and hidden the legend</p>
 
       </div>
     </div>
@@ -84,26 +84,17 @@
 
 
         <div class="kss-modifier__example">
-            <table cellspacing="0" cellpadding="0">
-  <tr>
-    <th>Table Header 1</th>
-    <th>Table Header 2</th>
-    <th>Table Header 3</th>
-  </tr>
-  <tr>
-    <td>Division 1</td>
-    <td>Division 2</td>
-    <td>Division 3</td>
-  </tr>
-  <tr>
-    <td>Division 1</td>
-    <td>Division 2</td>
-    <td>Division 3</td>
-  </tr>
-  <tr>
-    <td colspan="3">Full width cell</td>
-  </tr>
-</table>
+            <form action="" method="" class="search" role="search">
+  <fieldset class="search__fieldset">
+    <legend class="search__legend">Search</legend>
+    <label class="search__label" for="search">Search the site:</label>
+    <input class="search__field" type="search" name="search" id="search" aria-labelledby="search" />
+    <button type="submit" value="Search" class="search__button">
+      <span class="search__button-text">Search</span>
+      <span class="icon-magnifier search__button-icon" aria-hidden="true" data-grunticon-embed></span>
+    </button>
+  </fieldset>
+</form>
             
             <div class="kss-modifier__smallname kss-style">
                 Default
@@ -113,26 +104,17 @@
     </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Table Header 1&lt;/th&gt;
-    &lt;th&gt;Table Header 2&lt;/th&gt;
-    &lt;th&gt;Table Header 3&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Division 1&lt;/td&gt;
-    &lt;td&gt;Division 2&lt;/td&gt;
-    &lt;td&gt;Division 3&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Division 1&lt;/td&gt;
-    &lt;td&gt;Division 2&lt;/td&gt;
-    &lt;td&gt;Division 3&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot;&gt;Full width cell&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form action=&quot;&quot; method=&quot;&quot; class=&quot;search&quot; role=&quot;search&quot;&gt;
+  &lt;fieldset class=&quot;search__fieldset&quot;&gt;
+    &lt;legend class=&quot;search__legend&quot;&gt;Search&lt;/legend&gt;
+    &lt;label class=&quot;search__label&quot; for=&quot;search&quot;&gt;Search the site:&lt;/label&gt;
+    &lt;input class=&quot;search__field&quot; type=&quot;search&quot; name=&quot;search&quot; id=&quot;search&quot; aria-labelledby=&quot;search&quot; /&gt;
+    &lt;button type=&quot;submit&quot; value=&quot;Search&quot; class=&quot;search__button&quot;&gt;
+      &lt;span class=&quot;search__button-text&quot;&gt;Search&lt;/span&gt;
+      &lt;span class=&quot;icon-magnifier search__button-icon&quot; aria-hidden=&quot;true&quot; data-grunticon-embed&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
       </div>
 
       </div>
