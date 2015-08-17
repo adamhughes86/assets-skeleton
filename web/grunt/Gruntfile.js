@@ -51,8 +51,19 @@ module.exports = function(grunt) {
                     dest: '<%= pkg.assetsPath %>/images/svg/output'
                 }],
                 options: {
-                    enhanceSVG: true
+                    enhanceSVG: true,
+                    datasvgcss: 'icons-data-svg.css',
+                    datapngcss: 'icons-data-png.css',
+                    customselectors: {
+                        '*': ['.icon-$1-pseudo:before', '.icon-$1-pseudo:after']
+                    }
                 }
+            }
+        },
+        copy: {
+            svgCss: {
+                src: '<%= pkg.assetsPath %>/images/svg/output/icons-data-svg.css',
+                dest: '<%= pkg.assetsPath %>/sass/settings/_icons-data-svg.scss',
             }
         },
         sass: {
@@ -75,9 +86,9 @@ module.exports = function(grunt) {
                 colorizeOutput: true,
                 exclude: [
                     '<%= pkg.assetsPath %>/sass/core/bourbon/**/*.scss',
-                    '<%= pkg.assetsPath %>/sass/core/_normalize.scss',
                     '<%= pkg.assetsPath %>/sass/settings/_iconfont.scss',
-                    '<%= pkg.assetsPath %>/sass/settings/_sprite.scss'
+                    '<%= pkg.assetsPath %>/sass/settings/_sprite.scss',
+                    '<%= pkg.assetsPath %>/sass/settings/_icons-data-svg.scss'
                 ]
             },
         },
@@ -184,6 +195,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-grunticon');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-kss');
     grunt.loadNpmTasks('grunt-html-validation');
@@ -192,8 +204,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'grunticon:svgIcons', 'sass', 'jshint', 'notify_hooks']);
-    grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
+    grunt.registerTask('default', ['concat', 'uglify', 'grunticon:svgIcons', 'copy', 'sass', 'jshint', 'notify_hooks']);
+    grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'copy', 'sass', 'jshint', 'kss', 'notify_hooks', 'watch']);
     grunt.registerTask('regression', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'jshint', 'kss', 'phantomcss', 'notify_hooks']);
     grunt.registerTask('validate', ['validation']);
 };

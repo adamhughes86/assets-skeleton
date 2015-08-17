@@ -4,11 +4,30 @@
 //
 // Styleguide 2
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+ol,
+ul,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: bold;
+}
 
 // Headings
 //
-// Core headings based on a Perfect Fourth (1.333) ratio.
-// http://www.modularscale.com/?16&px&1.333&web&text
+// Core headings inherit parent size.
+// For headings inside content you should consider a modular scale - http://www.modularscale.com/?16&px&1.333&web&text
 //
 // Markup:
 // <h1 class=" {{modifier_class}}">h1. Heading</h1>
@@ -26,29 +45,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 1em;
-  padding: 0;
-  clear: both;
-  font-family: $primary-font;
-  line-height: 1.2;
-}
-h1 {
-  @include font-size(50.517);
-}
-h2 {
-  @include font-size(37.897);
-}
-h3 {
-  @include font-size(28.43);
-}
-h4 {
-  @include font-size(21.328);
-}
-h5 {
-  @include font-size(16);
-}
-h6 {
-  @include font-size(16);
+  font-family: inherit;
+  font-size: inherit;
 }
 
 
@@ -64,8 +62,6 @@ h6 {
 
 
 p {
-  margin: 0 0 1em;
-  padding: 0;
   @include font-size(16);
 }
 a {
@@ -108,13 +104,8 @@ blockquote {
 //
 // Styleguide 2.4
 
-dl {
-  margin-bottom: 1em;
-  padding: 0;
-}
-dt {
-  padding-bottom: 0;
-}
+
+dt,
 dd {
   padding-bottom: 0;
 }

@@ -1,0 +1,70 @@
+// Search
+//
+// Semantic and accessible search form. Wrapped in a fieldset and hidden the legend
+//
+// Markup:
+// <form action="" method="" class="search" role="search">
+//   <fieldset class="search__fieldset">
+//     <legend class="search__legend">Search</legend>
+//     <label class="search__label" for="search">Search the site:</label>
+//     <input class="search__field" type="search" name="search" id="search" aria-labelledby="search" />
+//     <button type="submit" value="Search" class="search__button">
+//       <span class="search__button-text">Search</span>
+//       <span class="icon-magnifier search__button-icon" aria-hidden="true" data-grunticon-embed></span>
+//     </button>
+//   </fieldset>
+// </form>
+//
+// Styleguide 8
+
+$formHeight: 30px;
+$searchBorder: 1px solid #ccc;
+
+.search {
+  padding: 10px 0;
+
+  &__fieldset {
+    position: relative;
+    border: 0;
+    font-size: 0; // Removes all white space
+  }
+  &__legend {
+    display: none;
+  }
+  &__label {
+    display: block;
+    @include font-size(16);
+  }
+  &__field {
+    @include appearance(none);
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 5px 0;
+    height: $formHeight;
+    width: 100%;
+    max-width: 300px;
+    font-family: $primary-font;
+    @include font-size(16);
+    border: $searchBorder;
+  }
+  &__button {
+    @include appearance(none);
+    display: block;
+    height: $formHeight;
+    overflow: hidden;
+    @include font-size(16);
+    background-color: transparent;
+    border: $searchBorder;
+    border-left: 0;
+  }
+  &__button-text {
+    text-align: left;
+  }
+  &__button-icon {
+    float: right;
+    margin-left: 5px;
+    height: 15px;
+    width: 15px;
+  }
+}

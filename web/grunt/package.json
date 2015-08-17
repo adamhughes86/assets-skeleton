@@ -20,6 +20,7 @@
     "grunt-spritesmith": "4.2.0"
   },
   "devDependencies": {
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-html-validation": "^0.1.18",
     "grunt-phantomcss": "file:../../../../../../var/folders/tv/5c6y2w2577nbgyyf0yh3j12m0000gn/T/npm-15085-86ab5d55/git-cache-c6f8e76a7c49/4827e66c7f84ebe4a1bcb6fb8c5afaeb448c9da2",
     "grunt-scss-lint": "^0.3.8",
