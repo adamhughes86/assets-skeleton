@@ -43,7 +43,7 @@ $searchBorder: 1px solid #ccc;
     padding: 5px 0;
     height: $formHeight;
     width: 100%;
-    max-width: 300px;
+    max-width: 190px;
     font-family: $primary-font;
     @include font-size(16);
     border: $searchBorder;
@@ -59,12 +59,29 @@ $searchBorder: 1px solid #ccc;
     border-left: 0;
   }
   &__button-text {
+    display: none;
     text-align: left;
   }
   &__button-icon {
     float: right;
-    margin-left: 5px;
+    margin-left: 0;
     height: 15px;
     width: 15px;
+  }
+}
+
+
+@include breakpoint(small) {
+  .search {
+    &__field {
+      max-width: 300px;
+    }
+    &__button-text {
+      display: block;
+      float: left;
+    }
+    &__button-icon {
+      margin-left: 5px;
+    }
   }
 }

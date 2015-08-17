@@ -143,7 +143,7 @@ module.exports = function(grunt) {
         viewportSize: [1280, 800],
       },
       src: [
-        'regression-tests/pre.js',
+        'regression-tests/start-test.js',
         'regression-tests/js-tests/*.js'
       ]
     },
