@@ -1,8 +1,20 @@
-.nav {
-  position: relative;
+.main-nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 0;
 
   &__item {
+    display: inline-block;
+    padding: 20px 15px;
+    width: 20%;
     color: #000;
+    @include font-size(12);
+    text-align: center;
+    background-color: #ebebeb;
+    border: 1px solid #fff;
+    vertical-align: bottom;
 
     &:visited {
       color: #000;
@@ -17,6 +29,48 @@
     }
     &--current {
       text-decoration: underline;
+    }
+    .no-js & {
+      width: 25%;
+    }
+    .no-js &.js-nav-more {
+      display: none;
+    }
+  }
+  &__sub {
+    display: none;
+    width: 100%;
+
+    .no-js & {
+      display: block;
+      padding-top: 0;
+    }
+
+    &-item {
+      display: block;
+      padding: 20px 15px;
+      @include font-size(12);
+      text-align: center;
+      background-color: #ebebeb;
+
+      .no-js & {
+        display: inline-block;
+        width: 25%;
+        border: 1px solid #fff;
+      }
+    }
+  }
+}
+
+
+@include breakpoint(small) {
+  .main-nav {
+    position: relative;
+
+    &__item,
+    &__sub-item {
+      padding: 10px 15px;
+      @include font-size(16);
     }
   }
 }
