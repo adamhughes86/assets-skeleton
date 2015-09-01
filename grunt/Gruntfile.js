@@ -1,10 +1,14 @@
 module.exports = function(grunt) {
 
+  require('jit-grunt')(grunt, {
+    notify_hooks: 'grunt-notify',
+    sprite: 'grunt-spritesmith',
+    scsslint: 'grunt-scss-lint',
+    validation: 'grunt-html-validation'
+  });
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    // 2. Configuration for module files goes here.
-    // plugins http://gruntjs.com/plugins
 
     concat: {
       vendor : {
@@ -14,6 +18,7 @@ module.exports = function(grunt) {
         dest: '<%= pkg.assetsPath %>/js/main.js'
       }
     },
+
     uglify: {
       build: {
         src: '<%= pkg.assetsPath %>/js/main.js',
@@ -23,6 +28,7 @@ module.exports = function(grunt) {
         sourceMap : true
       }
     },
+
     imagemin: {
       dynamic: {
         files: [{
@@ -33,6 +39,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+
     sprite: {
       all: {
         src: '<%= pkg.assetsPath %>/images/sprites/*.png',
@@ -42,6 +49,7 @@ module.exports = function(grunt) {
         padding: 5
       }
     },
+
     grunticon: {
       svgIcons: {
         files: [{
@@ -60,12 +68,14 @@ module.exports = function(grunt) {
         }
       }
     },
+
     copy: {
       svgCss: {
         src: '<%= pkg.assetsPath %>/images/svg/output/icons-data-svg.css',
         dest: '<%= pkg.assetsPath %>/sass/settings/_icons-data-svg.scss',
       }
     },
+
     sass: {
       dist: {
         files: [{
@@ -77,6 +87,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+
     scsslint: {
       allFiles: [
         '<%= pkg.assetsPath %>/sass/**/*.scss',
@@ -92,6 +103,7 @@ module.exports = function(grunt) {
         ]
       },
     },
+
     postcss: {
       options: {
         map: true, // inline sourcemaps
@@ -105,12 +117,14 @@ module.exports = function(grunt) {
         src: '<%= pkg.assetsPath %>/css/*.css'
       }
     },
+
     jshint: {
       all: ['Gruntfile.js', '../js/app.js'],
       options: {
         smarttabs : true
       }
     },
+
     validation: {
       options: {
         reset: grunt.option('reset') || false,
@@ -124,6 +138,7 @@ module.exports = function(grunt) {
         serverUrl: 'http://localhost/w3c-validator/check' // You need to have a local version of the w3c validator installed on your computer / network
       }
     },
+
     kss: {
       options: {
         css: '../css/styles.css',
@@ -135,6 +150,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     phantomcss: {
       options: {
         mismatchTolerance: 0.05,
@@ -147,12 +163,14 @@ module.exports = function(grunt) {
         'regression-tests/js-tests/*.js'
       ]
     },
+
     notify_hooks: {
       options: {
         enabled: true,
         max_jshint_notifications: 5 // maximum number of notifications from jshint output
       }
     },
+
     watch: {
       css : {
         files: ['<%= pkg.assetsPath %>/sass/**/*.scss'],
@@ -197,26 +215,8 @@ module.exports = function(grunt) {
     }
   });
 
-  // 3. Where we tell Grunt we plan to use this plug-in.
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-newer');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-scss-lint');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-spritesmith');
-  grunt.loadNpmTasks('grunt-grunticon');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-kss');
-  grunt.loadNpmTasks('grunt-html-validation');
-  grunt.loadNpmTasks('grunt-phantomcss');
-  grunt.loadNpmTasks('grunt-notify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
-  // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['concat', 'uglify', 'grunticon:svgIcons', 'copy', 'sass', 'postcss', 'jshint', 'notify_hooks']);
+  // Set tasks
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'postcss', 'jshint', 'notify_hooks']);
   grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'copy', 'sass', 'postcss', 'jshint', 'kss', 'notify_hooks', 'watch']);
   grunt.registerTask('regression', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'postcss', 'jshint', 'kss', 'phantomcss', 'notify_hooks']);
   grunt.registerTask('validate', ['validation']);

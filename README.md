@@ -3,6 +3,39 @@
 *Note:*
 This is a skeleton assets project with Grunt as a task runner. Not all tasks will be needed on every project so remove ones that are not needed or used.
 
+## First time set up
+Because of the amount of tasks this can sometimes be a bit tricky to set up. If you are having difficult it's possible you have wrong versions of key components.
+
+Running `npm install --production` will only install core plugins.
+
+`npm install` includes additional modules you may not need, such as KSS, Grunticon and Validation tasks.
+
+Open up the terminal and cd to the directory you want to place the project. Then run the following command
+
+    git clone git@gitlab.rippleffect.com:front-end/php-skeleton.git
+
+in the terminal, direct to the Grunt folder (/grunt/) and run `npm install`
+
+Ensure that the version of Node.js is v.0.12.7 (minimum requirements)
+
+Check current version of Node.js - `nodejs --version`
+
+Update to current Version of Node.js -
+
+    sudo npm cache clean -f
+    sudo npm install -g n
+    sudo n stable
+
+If encountering error when running npm install  direct to the root folder and run the following command…
+
+    sudo chown -R $USER /usr/local
+
+Update the required gems using `sudo gem update --system`
+
+You may have to also install the SCSS Lint gem - `sudo gem install scss-lint`
+
+You should be good to go, run grunt
+
 ## Global installs
 Grunt, Sass, Bower and Bourbon need to be installed on a global basis
 
