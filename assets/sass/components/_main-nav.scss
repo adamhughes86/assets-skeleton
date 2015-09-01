@@ -1,0 +1,22 @@
+.main-nav {
+  position: relative;
+
+  &__item {
+    color: #000;
+
+    &:visited {
+      color: #000;
+    }
+    &:hover {
+      color: #999;
+      text-decoration: underline;
+    }
+    &:focus,
+    &:active {
+      color: #666;
+    }
+    &--current {
+      text-decoration: underline;
+    }
+  }
+}

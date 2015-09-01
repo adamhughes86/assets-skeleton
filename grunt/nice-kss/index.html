@@ -13,8 +13,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="public/kss.css">
-    <link rel="stylesheet" href="../css/styles.css">
-
+    {{{styles}}}
     
     <script type="text/javascript">
         /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
@@ -31,42 +30,116 @@
 
     <nav class="kss-nav">
         <a class="kss-nav__item" href="./">0 - Overview</a>
+        {{#eachRoot}}
 
-        <a class="kss-nav__item" href="section-1.html">1 - Colour Palette</a>
+        <a class="kss-nav__item" href="section-{{referenceURI}}.html">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}} - {{header}}</a>
 
+        {{#ifReference ../rootName}}
 
-        <a class="kss-nav__item" href="section-2.html">2 - Typography</a>
+            {{#eachSection reference}}
+            {{#ifDepth 2}}
 
+            <a class="kss-nav__item kss-nav__item--secondary" href="section-{{../../referenceURI}}.html#kssref-{{referenceURI}}">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}} - {{header}}</a>
 
-        <a class="kss-nav__item" href="section-3.html">3 - Icons</a>
-
-
-        <a class="kss-nav__item" href="section-4.html">4 - Buttons</a>
-
-
-        <a class="kss-nav__item" href="section-5.html">5 - Forms</a>
-
-
-        <a class="kss-nav__item" href="section-6.html">6 - Tables</a>
-
-
-        <a class="kss-nav__item" href="section-7.html">7 - Example Content Page</a>
-
-
-        <a class="kss-nav__item" href="section-8.html">8 - Search</a>
-
-
-        <a class="kss-nav__item" href="section-9.html">9 - Hero</a>
-
+            {{/ifDepth}}
+            {{/eachSection}}
+        
+        {{/ifReference}}
+        {{/eachRoot}}
     </nav>
 </div>
     
 
 <article role="main" class="kss-main">
+{{#if homepage}}
   <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-     <p>Rippleffect Styleguide</p>
-
+    {{{homepage}}}
   </div>
+{{else}}
+
+  {{!
+    Display each section, in order.
+
+    The "root" element comes first in this loop, and can be detected using
+    the "#ifDepth 1" block as seen below.
+  }}
+  {{#eachSection rootName}}
+    {{#ifDepth 1}}
+      <div id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
+    {{else}}
+      <section id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
+    {{/ifDepth}}
+
+    <div class="kss-top-info kss-style">
+      <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+        <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
+          {{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}} - {{header}}
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h{{depth}}>
+
+    {{#if parameters}}
+      <ul class="kss-parameters">
+      {{#eachParameter}}
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">{{name}}</code>
+          <div class="kss-parameters__description">{{{description}}}</div>
+        </li>
+      {{/eachParameter}}
+      </ul>
+    {{/if}}
+
+    {{#if description}}
+      <div class="kss-description">
+        {{{description}}}
+      </div>
+    {{/if}}
+    </div>
+
+    {{#if markup}}
+    <div class="kss-modifier__wrapper">
+
+        {{#if modifiers}}
+        <ul class="kss-modifier__info kss-style">
+            <li class="kss-modifier__info-name kss-style">Default styling</li>
+
+            {{#eachModifier}}
+                <li class="kss-modifier__info-name kss-style">{{name}} - <span class="kss-modifier__info-desc kss-style">{{{description}}}</span></li>
+            {{/eachModifier}}
+        </ul>
+        {{/if}}
+
+        <div class="kss-modifier__example">
+            {{{markup}}}
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+        {{#eachModifier}}
+        <div class="kss-modifier__example">
+            {{{markup}}}
+            
+            <div class="kss-modifier__smallname kss-style">
+                {{name}}
+            </div>
+        </div>
+        {{/eachModifier}}
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+      </div>
+    {{/if}}
+
+    {{#ifDepth 1}}
+      </div>
+    {{else}}
+      </section>
+    {{/ifDepth}}
+  {{/eachSection}}
+{{/if}}
 </article>
 
 <!-- SCRIPTS -->
@@ -75,8 +148,15 @@
 <script>
   prettyPrint();
 </script>
+{{{scripts}}}
 
-
+{{! This will only be included in the demo page. }}
+{{#if argv.xdemo}}
+  <footer class="kss-github">
+    <!-- https://github.com/blog/273-github-ribbons -->
+    <a href="https://github.com/kss-node/kss-node"><img src="public/github-fork--black.png" alt="Fork me on GitHub"></a>
+  </footer>
+{{/if}}
 
 <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>

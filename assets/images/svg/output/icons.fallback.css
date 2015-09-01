@@ -1,0 +1,20 @@
+.icon-facebook-pseudo:before,
+.icon-facebook-pseudo:after,
+.icon-facebook { background-image: url('png/facebook.png'); background-repeat: no-repeat; }
+
+.icon-instagram-pseudo:before,
+.icon-instagram-pseudo:after,
+.icon-instagram { background-image: url('png/instagram.png'); background-repeat: no-repeat; }
+
+.icon-magnifier-pseudo:before,
+.icon-magnifier-pseudo:after,
+.icon-magnifier { background-image: url('png/magnifier.png'); background-repeat: no-repeat; }
+
+.icon-twitter-pseudo:before,
+.icon-twitter-pseudo:after,
+.icon-twitter { background-image: url('png/twitter.png'); background-repeat: no-repeat; }
+
+.icon-vine-pseudo:before,
+.icon-vine-pseudo:after,
+.icon-vine { background-image: url('png/vine.png'); background-repeat: no-repeat; }
+

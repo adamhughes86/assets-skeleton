@@ -58,15 +58,82 @@
 
         <a class="kss-nav__item" href="section-9.html">9 - Hero</a>
 
+
+        
     </nav>
 </div>
     
 
 <article role="main" class="kss-main">
-  <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-     <p>Rippleffect Styleguide</p>
 
+      <div id="kssref-9" class="kss-section kss-section--depth-1">
+
+    <div class="kss-top-info kss-style">
+      <h1 class="kss-title kss-title--level-1">
+        <a class="kss-title__permalink" href="#kssref-9">
+          9 - Hero
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h1>
+
+
+      <div class="kss-description">
+        <p>Hero section. The image is not a link. We use Srcset to display appropriately sized images for smaller windows.
+If the browser does not support srcset we display the smallest image.</p>
+
+      </div>
+    </div>
+
+    <div class="kss-modifier__wrapper">
+
+
+        <div class="kss-modifier__example">
+            <section class="hero">
+  <div class="hero__text">
+    <h1 class="hero__title">Example Hero Title Here</h1>
+    <p class="hero__summary">Proin ultricies ligula id sapien pulvinar sagittis. Integer augue urna, feugiat quis orci eget, laoreet rutrum enim</p>
+    <a href="http://www.example-website-link.com" class="hero__cta" title="Click here to find out more">Click here to find out more</a>
   </div>
+  <img class="hero__image"
+    srcset="/images/TEMP/large.jpg 1280w,
+      /images/TEMP/medium.jpg 768w,
+      /images/TEMP/small.jpg 480w"
+    sizes="(min-width: 800px) 800px,
+      (min-width: 500px) 500px,
+      (min-width: 400px) 400px, 100vw"
+    src="/images/TEMP/original.jpg"
+    alt="Here is a nice image"
+ />
+</section>
+            
+            <div class="kss-modifier__smallname kss-style">
+                Default
+            </div>
+        </div>
+          
+    </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;section class=&quot;hero&quot;&gt;
+  &lt;div class=&quot;hero__text&quot;&gt;
+    &lt;h1 class=&quot;hero__title&quot;&gt;Example Hero Title Here&lt;/h1&gt;
+    &lt;p class=&quot;hero__summary&quot;&gt;Proin ultricies ligula id sapien pulvinar sagittis. Integer augue urna, feugiat quis orci eget, laoreet rutrum enim&lt;/p&gt;
+    &lt;a href=&quot;http://www.example-website-link.com&quot; class=&quot;hero__cta&quot; title=&quot;Click here to find out more&quot;&gt;Click here to find out more&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;img class=&quot;hero__image&quot;
+    srcset=&quot;/images/TEMP/large.jpg 1280w,
+      /images/TEMP/medium.jpg 768w,
+      /images/TEMP/small.jpg 480w&quot;
+    sizes=&quot;(min-width: 800px) 800px,
+      (min-width: 500px) 500px,
+      (min-width: 400px) 400px, 100vw&quot;
+    src=&quot;/images/TEMP/original.jpg&quot;
+    alt=&quot;Here is a nice image&quot;
+ /&gt;
+&lt;/section&gt;</code></pre>
+      </div>
+
+      </div>
 </article>
 
 <!-- SCRIPTS -->

@@ -1,0 +1,144 @@
+// Forms
+//
+// Styling forms should be done with care and consideration and maintain usability. It is recommended to use classes to override core styles and not style the elements themselves.
+//
+// Styleguide 5
+
+// Input Field
+//
+// Input box and Label styling
+//
+// .form-field--alt              - Alternate style to make input stand out more
+//
+// Markup:
+// <div class="form-field {{modifier_class}}">
+//   <label class="form-label" for="login-example">Password:</label>
+//   <input id="login-example" type="text" name="login[example]" class="form-input" />
+// </div>
+//
+// Styleguide 5.1
+
+.form-field {
+  margin-bottom: 20px;
+
+  &--alt {
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    background-color: #ebebeb;
+    border: 1px solid #999;
+    border-radius: 4px;
+  }
+}
+.form-label {
+  display: inline-block;
+  float: none;
+  padding: 0 10px 5px 0;
+  text-transform: none;
+
+  &--hidden {
+    display: none;
+  }
+}
+.form-input {
+  height: 40px;
+  width: 100%;
+}
+.form-button-set {
+  clear: both;
+}
+
+
+// Textarea Field
+//
+// Textarea box and Label styling
+//
+// .form-field--alt              - Alternate style to make input stand out more
+//
+// Markup:
+// <div class="form-field {{modifier_class}}">
+//   <label class="form-label" for="textarea-example">Textarea</label>
+//   <textarea type="text" name="textarea" class="form-textarea" rows="2" cols="80" maxlength="200"></textarea>
+// </div>
+//
+// Styleguide 5.2
+
+.form-textarea {
+  width: 100%;
+}
+
+
+// Input Select
+//
+// Select box
+//
+// Markup:
+// <div class="form-field--select {{modifier_class}}">
+//   <label class="form-label" for="select-example">Select</label>
+//   <select id="select-example" type="text" name="select[example]" class="form-select">
+//     <option value="1" selected="selected">Option 1</option>
+//     <option value="2">Option 2</option>
+//   </select>
+// </div>
+//
+// Styleguide 5.3
+
+.form-field--select {
+  position: relative;
+  margin-bottom: 20px;
+
+  &:after {
+    content: 'v';
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    z-index: 2;
+    font-size: 22px;
+  }
+}
+.form-field--alt {
+  &:after {
+    right: 35px;
+    bottom: 27px;
+  }
+}
+.form-select {
+  @include appearance(none);
+
+  position: relative;
+  z-index: 2;
+  height: 40px;
+  padding: 8px 5px 8px 12px;
+  width: 100%;
+  max-width: none;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+
+// Input Checkbox
+//
+// Alternate Checkbox styling e.g. mailing list sign up
+//
+// Markup:
+// <div class="form-checkbox--alt">
+//   <input type="checkbox" id="checkbox-example" class="form-checkbox__input--alt"/>
+//   <label for="checkbox-example" class="form-checkbox__label--alt">I Agree</label>
+// </div>
+//
+// Styleguide 5.4
+
+.form-checkbox--alt {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: #ebebeb;
+  overflow: hidden;
+}
+.form-checkbox__label--alt {
+  display: table;
+  float: none;
+  padding: 0;
+  font-weight: bold;
+  text-transform: none;
+}

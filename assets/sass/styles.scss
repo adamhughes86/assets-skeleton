@@ -1,24 +1,37 @@
-// Variables
-@import 'includes/fonts.scss';
-@import 'includes/variables.scss';
-@import 'includes/sprite.scss';
-@import 'includes/iconfont.scss';
-//Plugins
+// CSS should follow CCF1 coding standard
 
-@import 'plugins/slick.scss';
+// Core - required for setting the project. Sometimes pulled in with Bower
+@import 'core/bourbon/bourbon';
 
-// Mixins
-@import 'bourbon/bourbon';
-@import 'includes/mixins.scss';
-@import 'includes/media-queries.scss';
+// Vendor - settings and styles from Vendor plugins and components. These should be left as default
+// @import 'vendor/slick.scss';
 
-// Normlize and Base
-@import 'styles/normalize.scss';
-@import 'styles/base.scss';
+// Settings - tend to do nothing on their own. Used in combination with other files
+@import 'settings/fonts';
+@import 'settings/color-palette';
+@import 'settings/variables';
+@import 'settings/sprite';
+@import 'settings/mixins';
+@import 'settings/media-queries';
+@import 'settings/icons-data-svg';
 
-// Main Styles
-@import 'styles/main.scss';
-@import 'modules/header.scss';
-@import 'modules/nav.scss';
-@import 'modules/footer.scss';
-@import 'modules/slick.scss';
+// UI - Basic styles to be reused on every page
+@import 'ui/structure';
+@import 'ui/typography';
+@import 'ui/icons';
+@import 'ui/buttons';
+@import 'ui/forms';
+@import 'ui/tables';
+
+// Components - reusable components and sections
+@import 'components/header';
+@import 'components/search';
+@import 'components/main-nav';
+@import 'components/main-nav-example';
+@import 'components/hero';
+@import 'components/footer';
+@import 'components/pagination';
+@import 'components/slick';
+
+// Styles that need to load last
+@import 'ui/print';

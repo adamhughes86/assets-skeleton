@@ -7,11 +7,10 @@ var app = {
     // Initializer
     init: function() {
         app.enquire();
+        app.mainNav();
     },
 
     enquire : function() {
-        var themes = $j('.homepage-themes-blocks');
-        var themesWrapper = $j('.homepage-themes');
 
         enquire.register("screen and (max-width: " + mediaLarge + ")", {
             match : function() {
@@ -23,6 +22,12 @@ var app = {
             unmatch : function() {
                 console.log('Unmatch');
             }
+        });
+    },
+
+    mainNav : function() {
+        $j('.js-nav-more').on('click', function(e){
+            $j('.js-sub-nav').slideToggle();
         });
     }
 
