@@ -4,7 +4,7 @@
 This is a skeleton assets project with Grunt as a task runner. Not all tasks will be needed on every project so remove ones that are not needed or used.
 
 Looking into removing some of the more complicated tasks.
-Added support for codeship
+Added support for deployment
 
 ## First time set up
 Because of the amount of tasks this can sometimes be a bit tricky to set up. If you are having difficult it's possible you have wrong versions of key components.
