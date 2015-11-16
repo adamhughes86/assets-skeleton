@@ -71,4 +71,3 @@ The styleguide can be used to do Regression Testing. Regression tests are handle
 ## Validation
 There is a grunt task for validating your local site. You will need to have a local version of the w3c validator installed. You update the gruntfile with the pages you want to test against. This can be styleguide pages or site pages.
 
-test -- martyn
