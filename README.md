@@ -5,6 +5,7 @@ This is a skeleton assets project with Grunt as a task runner. Not all tasks wil
 
 Looking into removing some of the more complicated tasks.
 Added support for deployment
+Adam Test
 
 ## First time set up
 Because of the amount of tasks this can sometimes be a bit tricky to set up. If you are having difficult it's possible you have wrong versions of key components.
