@@ -44,7 +44,7 @@ You should be good to go, run grunt
 Grunt, Sass, Bower and Bourbon need to be installed on a global basis
 
 ## Bower installation
-Bower is used for the installation of modules. The bower_component's folder is store in the web directory. Do not commit the bower_components folder.
+Bower is used for the installation of modules. The bower_component's folder is store in the web directory. We *do commit* the bower folder
 A bower.json file will installed basic packages that are used on the site. More packages can be added on a per project basis.
 Bower will need to be installed for the project when pulling down from git.
 
