@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
 
+  // We load in grunt modules with require. Some need to be manually called though
   require('jit-grunt')(grunt, {
     notify_hooks: 'grunt-notify',
     sprite: 'grunt-spritesmith',
-    scsslint: 'grunt-scss-lint',
-    validation: 'grunt-html-validation'
+    scsslint: 'grunt-scss-lint'
   });
 
   grunt.initConfig({
@@ -47,25 +47,6 @@ module.exports = function(grunt) {
         destCss: '<%= pkg.assetsPath %>/sass/settings/_sprite.scss',
         imgPath: '<%= pkg.assetsPath %>/assets/images/sprite.png',
         padding: 5
-      }
-    },
-
-    grunticon: {
-      svgIcons: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.assetsPath %>/images/svg/input',
-          src: ['*.svg', '*.png'],
-          dest: '<%= pkg.assetsPath %>/images/svg/output'
-        }],
-        options: {
-          enhanceSVG: true,
-          datasvgcss: 'icons-data-svg.css',
-          datapngcss: 'icons-data-png.css',
-          customselectors: {
-            '*': ['.icon-$1-pseudo:before', '.icon-$1-pseudo:after']
-          }
-        }
       }
     },
 
@@ -125,20 +106,6 @@ module.exports = function(grunt) {
       }
     },
 
-    validation: {
-      options: {
-        reset: grunt.option('reset') || false,
-        stoponerror: false,
-        doctype: 'HTML5',
-        remotePath: 'http://player.arsenal.com/', // Set your testing site (remote or local)
-        remoteFiles: [
-            ' ',
-            'features/'
-        ], // Set the urls you want to test here
-        serverUrl: 'http://localhost/w3c-validator/check' // You need to have a local version of the w3c validator installed on your computer / network
-      }
-    },
-
     kss: {
       options: {
         css: '../css/styles.css',
@@ -149,19 +116,6 @@ module.exports = function(grunt) {
           '<%= pkg.assetsPath %>/styleguide': ['<%= pkg.assetsPath %>/sass']
         }
       }
-    },
-
-    phantomcss: {
-      options: {
-        mismatchTolerance: 0.05,
-        screenshots: 'regression-tests/baselines',
-        results: 'regression-tests/results',
-        viewportSize: [1280, 800],
-      },
-      src: [
-        'regression-tests/start-test.js',
-        'regression-tests/js-tests/*.js'
-      ]
     },
 
     notify_hooks: {
@@ -203,21 +157,10 @@ module.exports = function(grunt) {
           spawn: false,
           livereload: true
         }
-      },
-      svg : {
-        files: ['<%= pkg.assetsPath %>/images/svg/input/*'],
-        tasks: ['grunticon:svgIcons'],
-        options: {
-          spawn: false,
-          livereload: true
-        }
       }
     }
   });
 
-  // Set tasks
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'postcss', 'jshint', 'notify_hooks']);
-  grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'copy', 'sass', 'postcss', 'jshint', 'kss', 'notify_hooks', 'watch']);
-  grunt.registerTask('regression', ['concat', 'sprite', 'scsslint', 'grunticon:svgIcons', 'sass', 'postcss', 'jshint', 'kss', 'phantomcss', 'notify_hooks']);
-  grunt.registerTask('validate', ['validation']);
+  grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'copy', 'sass', 'postcss', 'jshint', 'kss', 'notify_hooks', 'watch']);
 };
