@@ -15,7 +15,7 @@ linters:
   DeclarationOrder:
     enabled: false
   DisableLinterReason:
-    enabled: true
+    enabled: false
   DuplicateProperty:
     enabled: true
   ElsePlacement:
@@ -64,12 +64,14 @@ linters:
     enabled: true
   PropertyUnits:
     enabled: false
+  PseudoElement:
+    enabled: false
   QualifyingElement:
     allow_element_with_attribute: true
     allow_element_with_class: true
     allow_element_with_id: false
   SelectorDepth:
-    max_depth: 3
+    max_depth: 4
   SelectorFormat:
     enabled: false
   Shorthand:

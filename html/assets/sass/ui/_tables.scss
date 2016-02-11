@@ -1,0 +1,37 @@
+$tableBorder: #999;
+
+table {
+  width: 100%;
+  border: 1px solid $tableBorder;
+}
+tr {
+  background-color: #fff;
+  border-top: 1px solid $tableBorder;
+
+  &:first-child {
+    border-top: 0;
+  }
+  &:nth-child(even) {
+    background-color: #eee;
+  }
+}
+th {
+  padding: 10px 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-left: 1px solid $tableBorder;
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+td {
+  padding: 10px 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-left: 1px solid $tableBorder;
+
+  &:first-child {
+    border-left: 0;
+  }
+}

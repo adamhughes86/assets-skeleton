@@ -1,0 +1,38 @@
+.hero {
+  position: relative;
+
+  &__text {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    z-index: 2;
+    padding: 20px;
+    color: #000;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-color: #fff;
+      opacity: 0.6;
+    }
+  }
+  &__title {
+    color: inherit;
+  }
+  &__summary {
+    color: inherit;
+  }
+  &__cta {
+    color: inherit;
+  }
+  &__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+}

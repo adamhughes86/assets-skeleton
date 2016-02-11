@@ -1,0 +1,64 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+ol,
+ul,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+p {
+  @include font-size(16);
+}
+a {
+  color: #00f;
+  text-decoration: underline;
+}
+
+blockquote {
+  margin: 10px 10px 10px 40px;
+  padding-left: 10px;
+  border-left: 2px solid #000;
+}
+
+dt,
+dd {
+  padding-bottom: 0;
+}
+
+ol {
+  padding-bottom: 1em;
+}
+li {
+  padding-bottom: 5px;
+}
+
+ul {
+  padding-bottom: 1em;
+}
+
+address {
+  padding-bottom: 1em;
+  font-style: normal;
+}
