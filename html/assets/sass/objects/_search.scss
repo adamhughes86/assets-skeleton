@@ -1,0 +1,60 @@
+$formHeight: 30px;
+$searchBorder: 1px solid #ccc;
+
+.search {
+  padding: 10px 0;
+
+  &__label {
+    display: block;
+    @include font-size(16);
+  }
+  &__field {
+    @include appearance(none);
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 5px 0;
+    height: $formHeight;
+    width: 100%;
+    max-width: 190px;
+    font-family: $primary-font;
+    @include font-size(16);
+    border: $searchBorder;
+  }
+  &__button {
+    @include appearance(none);
+    display: block;
+    height: $formHeight;
+    overflow: hidden;
+    @include font-size(16);
+    background-color: transparent;
+    border: $searchBorder;
+    border-left: 0;
+  }
+  &__button-text {
+    display: none;
+    text-align: left;
+  }
+  &__button-icon {
+    float: right;
+    margin-left: 0;
+    height: 15px;
+    width: 15px;
+  }
+}
+
+
+@include breakpoint(small) {
+  .search {
+    &__field {
+      max-width: 300px;
+    }
+    &__button-text {
+      display: block;
+      float: left;
+    }
+    &__button-icon {
+      margin-left: 5px;
+    }
+  }
+}

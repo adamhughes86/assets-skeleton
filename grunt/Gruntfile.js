@@ -4,28 +4,79 @@ module.exports = function(grunt) {
   require('jit-grunt')(grunt, {
     notify_hooks: 'grunt-notify',
     sprite: 'grunt-spritesmith',
-    scsslint: 'grunt-scss-lint'
+    scsslint: 'grunt-scss-lint',
+    bower: 'grunt-bower-task'
   });
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    bower: {
+      install: {
+        options: {
+          targetDir: '<%= pkg.assetsPath %>/libs'
+        }
+      }
+    },
+
+    modernizr: {
+      dist: {
+        devFile: '<%= pkg.assetsPath %>/libs/modernizr/modernizr.js',
+        dest: '<%= pkg.assetsPath %>/js/vendor/custom-modernizr.js',
+        files: {
+          src: [
+            '<%= pkg.assetsPath %>/js/src/app.js',
+            '<%= pkg.assetsPath %>/js/src/app.*.js',
+            '<%= pkg.assetsPath %>/sass/*/*.scss',
+          ]
+        }
+      }
+    },
+
     concat: {
-      vendor : {
+      options: {
+        sourceMap: true
+      },
+      scripts : {
         src: [
-          '<%= pkg.assetsPath %>/js/app.js'
+          '<%= pkg.assetsPath %>/libs/jquery/jquery.js',
+          '<%= pkg.assetsPath %>/js/vendor/custom-modernizr.js',
+          '<%= pkg.assetsPath %>/libs/enquire/enquire.js',
+          '<%= pkg.assetsPath %>/libs/slick-carousel/slick.min.js',
+          '<%= pkg.assetsPath %>/js/src/app.js'
         ],
-        dest: '<%= pkg.assetsPath %>/js/main.js'
+        dest: '<%= pkg.assetsPath %>/js/build/compiled.js'
+      },
+      styles : {
+        src: [
+          '<%= pkg.assetsPath %>/libs/slick-carousel/slick.css',
+          '<%= pkg.assetsPath %>/css/src/styles.css'
+        ],
+        dest: '<%= pkg.assetsPath %>/css/build/compiled.css'
       }
     },
 
     uglify: {
-      build: {
-        src: '<%= pkg.assetsPath %>/js/main.js',
-        dest: '<%= pkg.assetsPath %>/js/main.min.js'
+      files: {
+        src: '<%= pkg.assetsPath %>/js/build/compiled.js',
+        dest: '<%= pkg.assetsPath %>/js/build/compiled.min.js'
       },
       options: {
         sourceMap : true
+      }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: '<%= pkg.assetsPath %>/css/',
+          src: [
+            'compiled.css'
+          ],
+          dest: '<%= pkg.assetsPath %>/css/',
+          ext: '.min.css'
+        }]
       }
     },
 
@@ -40,20 +91,15 @@ module.exports = function(grunt) {
       }
     },
 
-    sprite: {
+    sprite:{
       all: {
         src: '<%= pkg.assetsPath %>/images/sprites/*.png',
-        dest: '<%= pkg.assetsPath %>/images/sprite.png',
-        destCss: '<%= pkg.assetsPath %>/sass/settings/_sprite.scss',
-        imgPath: '<%= pkg.assetsPath %>/assets/images/sprite.png',
-        padding: 5
-      }
-    },
-
-    copy: {
-      svgCss: {
-        src: '<%= pkg.assetsPath %>/images/svg/output/icons-data-svg.css',
-        dest: '<%= pkg.assetsPath %>/sass/settings/_icons-data-svg.scss',
+        retinaSrcFilter: '<%= pkg.assetsPath %>/images/sprites/*@2x.png',
+        dest: '<%= pkg.assetsPath %>/images/spritesheet.png',
+        retinaDest: '<%= pkg.assetsPath %>/images/spritesheet@2x.png',
+        destCss: '<%= pkg.assetsPath %>/sass/settings/_sprites.scss',
+        imgPath: '../images/spritesheet.png',
+        retinaImgPath: '../images/spritesheet@2x.png'
       }
     },
 
@@ -63,7 +109,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= pkg.assetsPath %>/sass',
           src: ['*.scss'],
-          dest: '<%= pkg.assetsPath %>/css',
+          dest: '<%= pkg.assetsPath %>/css/build',
           ext: '.css'
         }]
       }
@@ -79,7 +125,7 @@ module.exports = function(grunt) {
         exclude: [
           '<%= pkg.assetsPath %>/sass/core/bourbon/**/*.scss',
           '<%= pkg.assetsPath %>/sass/settings/_iconfont.scss',
-          '<%= pkg.assetsPath %>/sass/settings/_sprite.scss',
+          '<%= pkg.assetsPath %>/sass/settings/_sprites.scss',
           '<%= pkg.assetsPath %>/sass/settings/_icons-data-svg.scss'
         ]
       },
@@ -90,31 +136,19 @@ module.exports = function(grunt) {
         map: true, // inline sourcemaps
         processors: [
           require('autoprefixer-core')({
-            browsers: 'last 2 versions'
+            browsers: 'last 3 versions'
           })
         ]
       },
       dist: {
-        src: '<%= pkg.assetsPath %>/css/*.css'
+        src: '<%= pkg.assetsPath %>/css/build/styles.css'
       }
     },
 
     jshint: {
-      all: ['Gruntfile.js', '../js/app.js'],
+      all: ['Gruntfile.js', '../js/src/app.js'],
       options: {
         smarttabs : true
-      }
-    },
-
-    kss: {
-      options: {
-        css: '../css/styles.css',
-        template: 'nice-kss', // This should be the path to a better KSS template
-      },
-      dist: {
-        files: {
-          '<%= pkg.assetsPath %>/styleguide': ['<%= pkg.assetsPath %>/sass']
-        }
       }
     },
 
@@ -128,15 +162,15 @@ module.exports = function(grunt) {
     watch: {
       css : {
         files: ['<%= pkg.assetsPath %>/sass/**/*.scss'],
-        tasks: ['scsslint', 'sass', 'kss'],
+        tasks: ['scsslint', 'sass', 'postcss', 'concat:styles', 'cssmin'],
         options: {
           spawn: false,
           livereload: true
         }
       },
       scripts: {
-        files: ['<%= pkg.assetsPath %>/js/**/*.*.js', '<%= pkg.assetsPath %>/js/app.js'],
-        tasks: ['jshint', 'concat'],
+        files: ['<%= pkg.assetsPath %>/js/src/**/*.*.js', '<%= pkg.assetsPath %>/js/src/app.js'],
+        tasks: ['jshint', 'concat:scripts', 'uglify'],
         options: {
           spawn: false,
           livereload: true
@@ -161,6 +195,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'postcss', 'jshint', 'notify_hooks']);
-  grunt.registerTask('dev', ['concat', 'sprite', 'scsslint', 'copy', 'sass', 'postcss', 'jshint', 'kss', 'notify_hooks', 'watch']);
+  grunt.registerTask('default', ['bower', 'modernizr', 'sprite', 'sass', 'postcss', 'concat', 'uglify', 'cssmin', 'jshint', 'notify_hooks']);
+  grunt.registerTask('dev', ['bower', 'modernizr', 'sprite', 'scsslint', 'sass', 'postcss', 'jshint', 'concat', 'uglify', 'cssmin', 'notify_hooks', 'watch']);
 };

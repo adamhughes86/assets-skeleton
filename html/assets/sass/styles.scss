@@ -1,0 +1,39 @@
+// CSS should follow CCF1 coding standard
+
+// Core - required for setting the project. Sometimes pulled in with Bower
+@import 'core/bourbon/bourbon';
+
+// Vendor - settings and styles from Vendor plugins and components. These should be left as default
+// @import 'vendor/slick.scss';
+
+// Settings - tend to do nothing on their own. Used in combination with other files
+@import 'settings/fonts';
+@import 'settings/color-palette';
+@import 'settings/variables';
+@import 'settings/sprites';
+@import 'settings/mixins';
+@import 'settings/media-queries';
+@import 'settings/icons-data-svg';
+
+// UI - Basic styles to be reused on every page
+@import 'ui/structure';
+@import 'ui/typography';
+@import 'ui/icons';
+@import 'ui/buttons';
+@import 'ui/tables';
+
+// Objects - reusable objects
+@import 'objects/header';
+@import 'objects/search';
+@import 'objects/main-nav';
+@import 'objects/hero';
+@import 'objects/footer';
+@import 'objects/pagination';
+@import 'objects/slick';
+
+// Components - specific use cases
+@import 'components/component';
+
+// Styles that need to load last
+@import 'ui/print';
+@import 'shame';

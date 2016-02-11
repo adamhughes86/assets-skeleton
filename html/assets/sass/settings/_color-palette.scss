@@ -1,0 +1,29 @@
+// Colour Palette
+//
+// Primary and secondary colours are defined in settings/_colour-palette.scss. We use actual colour names to define the variables. This prevents ambiguation when naming e.g. $grey, $lightGrey, $lighterGrey.
+//
+
+$colorPalette: (
+  charcoal: #323232
+);
+
+@each $color in $colorPalette {
+  .color-#{nth($color, 1)} {
+    color: nth($color, 2);
+  }
+  .fill-#{nth($color, 1)} {
+    background-color: nth($color, 2);
+  }
+}
+
+@function color($key) {
+  @if map-has-key($colorPalette, $key) {
+    @return map-get($colorPalette, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colorPalette.";
+  @return null;
+}
+
+// background-color: color(zeus);
+
